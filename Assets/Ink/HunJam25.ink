@@ -54,17 +54,20 @@ ________
 DAY 1
 ____
 Morning
+Checking in with the chef 
+(Could this be the first time they are flying together? Who has more experience on spaceships?)
+For the sake of an efficient tutorialisation the chef's work experience is in kitchens but not on ships. So the officer can assure them that it works pretty much the same.
 
 
 ____
 Noon
-    
+Reassuring     
 
 ________
 DAY 2
 ____
 Morning
-
+Chatting about the foodstocks, which she herself oversaw the purchase of.
 
 ____
 Noon
