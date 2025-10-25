@@ -1,13 +1,22 @@
+using System;
 using System.Collections.Generic;
 using Model;
 using UnityEngine;
 
 public class ProcessingStation : MonoBehaviour
 {
+    public enum ProcessingType
+    {
+        Cook,
+        Bake,
+        Chop,
+        Mix
+    }
+    
     private Transform _trans;
 
     private List<InventorySlot> _slots;
-    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -36,7 +45,13 @@ public class ProcessingStation : MonoBehaviour
         }
     }
 
-    public void Cook()
+    public void Cook() => SimpleProcessing(ProcessingType.Cook);
+
+    public void Bake() => SimpleProcessing(ProcessingType.Bake);
+
+    public void Chop() => SimpleProcessing(ProcessingType.Chop);
+
+    public void SimpleProcessing(ProcessingType process)
     {
         bool success = false;
         
@@ -49,7 +64,25 @@ public class ProcessingStation : MonoBehaviour
             }
 
             FoodItem foodItem = inventoryItem.foodItem;
-            FoodItem result = foodItem.cookResult;
+            FoodItem result;
+
+            switch (process)
+            {
+                case ProcessingType.Cook:
+                    result = foodItem.cookResult;
+                    break;
+                case ProcessingType.Bake:
+                    result = foodItem.bakeResult;
+                    break;
+                case ProcessingType.Chop:
+                    result = foodItem.chopResult;
+                    break;
+                case ProcessingType.Mix:
+                    //overflow
+                default:
+                    Debug.LogError("Wrong processing type for simple processing!");
+                    return;
+            }
             
             if (result)
             {
@@ -58,7 +91,7 @@ public class ProcessingStation : MonoBehaviour
             }
             else
             {
-                Debug.Log($"Poof, this shit {foodItem.name} didnt cook man");
+                Debug.Log($"Poof, this shit {foodItem.name} didnt {process.ToString()} man");
             }
         }
 

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a77e7b15d4b8684393d0947c5c269ee, type: 3}
+  m_Name: TacoFinished
+  m_EditorClassIdentifier: Assembly-CSharp::FoodItem
+  cookResult: {fileID: 0}
+  chopResult: {fileID: 0}
+  bakeResult: {fileID: 0}
+  baseType: 0
+  image: {fileID: 2016717391, guid: c8c38a1e63e6f6944ab4c40ce90add49, type: 3}
+  isEdible: 1
+  isResultOfMixing: 1
