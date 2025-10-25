@@ -26,6 +26,8 @@ public class ProcessingStation : MonoBehaviour
             _slots.Add(slot);
             slot.RegisterOwnerStation(this);
         }
+
+        ContaminateCheck();
     }
 
     public void ContaminateCheck()

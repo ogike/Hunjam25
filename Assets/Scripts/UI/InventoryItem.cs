@@ -12,7 +12,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 {
     private Image _image;
 
-    private List<FoodType> _contaminations;
+    private FoodType _contaminations;
     
     [Expandable] public FoodItem foodItem;
     [HideInInspector] public Transform parentAfterDrag;
@@ -25,26 +25,24 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             return;
         }
 
-        _contaminations = new List<FoodType>();
+        _image = GetComponent<Image>();
+        _contaminations = FoodType.Neutral;
         InitializeItem(foodItem);
     }
     
     public void AddContamination(FoodType contamination)
     {
-        if(_contaminations.Contains(contamination)) return;
-
-        _contaminations.Add(contamination);
+        Debug.Log($"Adding contamination to {name}: had {_contaminations}, adding {contamination}");
+        _contaminations |= contamination;
     }
 
     public void AddContamination(InventoryItem item)
     {
-        foreach (FoodType contamination in item._contaminations)
-        {
-            this._contaminations.Add(contamination);
-        }
+        this._contaminations |= item._contaminations;
+        Debug.Log($"Adding contamination to {name}: had {_contaminations}, adding {item._contaminations}");
     }
 
-    public List<FoodType> GetContaminations() => _contaminations;
+    public FoodType GetContaminations() => _contaminations;
 
     public void InitializeItem(FoodItem item)
     {
@@ -54,7 +52,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         else
         {
             Debug.LogWarning("Image for food not set!");
-        }
+        } 
         AddContamination(item.baseType);
     }
 
