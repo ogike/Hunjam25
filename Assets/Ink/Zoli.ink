@@ -6,7 +6,11 @@
 
 ENGI: Hi! 
 
-ENGI: Another day and I am ready for another...
+CHEF: Hey! You must be ENGI, right?
+
+ENGI: That's me!
+
+ENGI: Another job and I am ready for another...
 
 CHEF: Another what?
 
@@ -24,15 +28,17 @@ CHEF: I can see that. Do you take breaks at least?
 
 ENGI: The spaceship needs attention at all times!
 
-ENGI: But I like working with you guys for the better - or maybe worse - goals.
+ENGI: But I like working with you guys so far.
 
-ENGI: So I guess these are my breaks.
+ENGI: For the better - or maybe worse - goals.
+
+ENGI: So I guess these will be my breaks.
 
 CHEF: I'm glad. Maybe try to limit your caffeine intake though.
 
+CHEF: Haven't seen you without a coffee so far.
+
 ENGI: You wound me, that's what fuels me. 
-//Change it if it's first day on ship
-ENGI: Although your food has been amazing so far, thanks for that!
 
 ENGI: I wonder how many days I could go without food, hmm...
 
