@@ -1,11 +1,12 @@
 using System.Collections.Generic;
+using Model;
 using UnityEngine;
 
 public class ProcessingStation : MonoBehaviour
 {
     private Transform _trans;
 
-    private List<InventorySlot> _slots; 
+    private List<InventorySlot> _slots;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -38,7 +39,8 @@ public class ProcessingStation : MonoBehaviour
             }
 
             FoodItem foodItem = inventoryItem.foodItem;
-            FoodItem result = foodItem.Cook();
+            FoodItem result = foodItem.cookResult;
+            
             if (result)
             {
                 inventoryItem.InitializeItem(result);
@@ -54,5 +56,10 @@ public class ProcessingStation : MonoBehaviour
         {
             //Cook succesful sound
         }
+    }
+
+    public void MixingStation()
+    {
+        //
     }
 }
