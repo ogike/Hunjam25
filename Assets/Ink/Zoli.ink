@@ -28,10 +28,10 @@ ENGI: But I like working with you guys for the better - or maybe worse - goals.
 
 ENGI: So I guess these are my breaks.
 
-CHEF: I am glad. Maybe try to limit your caffeine intake though.
+CHEF: I'm glad. Maybe try to limit your caffeine intake though.
 
 ENGI: You wound me, that's what fuels me. 
-
+//Change it if it's first day on ship
 ENGI: Although your food has been amazing so far, thanks for that!
 
 ENGI: I wonder how many days I could go without food, hmm...
@@ -73,7 +73,7 @@ CHEF: Glad you liked it!
 ENGI: I am feeling a little off right now so I might just go back to the lounge area. 
 ENGI: Have a nice day!
 
-CHEF: You too!
+CHEF: Oh... You too!
 
 
 //DAY 2
@@ -82,7 +82,7 @@ CHEF: You too!
 
 // IF FOOD WAS GOOD YESTERDAY
 
-ENGI: HNJ-AM 2O25 is ready for the day! 
+ENGI: HAM25 is ready for the day! 
 
 CHEF: Oh, where did this much energy come from?
 
@@ -96,7 +96,7 @@ ENGI: I could work on HAM25 all night long.
 
 ENGI: I fixed the broken pipes near the bathroom, padded out one of the chambers, switched out the microchips in .. 
 
-ENGI: Ahh but I don't want to bore you with this you must be so busy!
+ENGI: Ahh but I don't want to bore you with this, you must be so busy!
 
 ENGI: So thank you again, can't wait for today's meal!
 
@@ -112,7 +112,9 @@ ENGI: I realized this yesterday on the toilet.
 
 CHEF: Hmmm?
 
-ENGI: Sorry to make your work a little harder but I forgot to mention, I have a weak stomach for gluten. 
+ENGI: Sorry to make your work a little harder but I forgot to mention.
+
+ENGI: I have a weak stomach for gluten. 
 
 ENGI: Could you please take that into consideration?
 
@@ -140,7 +142,7 @@ CHEF: And you?
 
 ENGI: I need to see my cat as soon as possible, absolutely important for my soul.
 
-CHEF: That is very true.
+CHEF: Understandable!
 
 ENGI: Let's go! I am ready to take on the day and work on the dear HAM25.
 
@@ -159,7 +161,7 @@ ENGI: Maybe the food got mixed together with gluten?
 
 ENGI: Or might just be because I miss my cat from home so much.
 
-CHEF: I'll try to be more careful next time.
+CHEF: Oh, it must have been my mistake... I'll try to be more careful next time.
 
 ENGI: I think I'll have some rest in the lounge and watch some cat videos.
 
@@ -225,7 +227,7 @@ ENGI: Hi! I have good news, I think I figured out the fuel management.
 
 ENGI: We will last until we reach the new drop-off point.
 
-CHEF: Glad to hear that.
+CHEF: Whew! I was already in a bit of a pinch getting the ingredients ready today. Thank you!
 
 ENGI: Couldn't have made it without your cooking!
 
@@ -281,12 +283,5 @@ ENGI: But we might land today, so that's good.
 ENGI: Good luck with cleaning!
 
 
-
-
-
-
 ->DONE
-//there was a line break above, between "another concoction". It's awkward to read in a dialogue box. It would've been better as "...concoction. /linebreak/ Just how life goes!"
-//try to write shorter lines, as we don't have a visual novel-sized textbox.
-// =winds_down
-// olyan outline ami discordon, konkrétumok chefről outline
+
