@@ -55,9 +55,9 @@ DAY 1
 ____
 Morning
 
-NAVI: Heeey, Chef! Good to see you!
+NAVI: Heeey, Chef! Good to see you! I'm Lead Navigator Navi! :)
 
-CHEF: Oh hey, how's it--- Oh, god, do you smell this? Is something on fire?
+CHEF: Oh hey, I'm Chef, how's it--- Oh, god, do you smell this? Is something on fire?
 
 NAVI: Nooo, silly! That's me and my good old buddies, the exxxtra strong cigs!
 
@@ -193,7 +193,7 @@ NAVI: No, not really, everyone is soooo lame, and the conversation is never goin
 
 CHEF: Unlike us! Got it? Cuz we are going somewhere?
 
-NAVI: Oh yeah, not sure about that either. Detour. You know *SIIIIIP* how it is.
+NAVI: Oh yeah, not sure about that either. Detour. But you *SIIIIIP* probably already know.
 
 CHEF: Ah, Navi, please stop blowing smoke in the kitch--- okaybye.
 ____
