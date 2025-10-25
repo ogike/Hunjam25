@@ -16,7 +16,6 @@ public class Interactable : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log(transform.name + " clicked");
         PanelsController.Instance.ShowPanel(uiPanel);
     }
 }

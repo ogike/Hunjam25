@@ -9,7 +9,7 @@ using Model;
 
 public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    public Image image;
+    private Image _image;
 
     private List<FoodType> _contaminations;
     
@@ -48,13 +48,18 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void InitializeItem(FoodItem item)
     {
         foodItem = item;
-        image.sprite = foodItem.image;
+        if(foodItem.image)
+            _image.sprite = foodItem.image;
+        else
+        {
+            Debug.LogWarning("Image for food not set!");
+        }
         AddContamination(item.baseType);
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        image.raycastTarget = false;
+        _image.raycastTarget = false;
         parentAfterDrag = transform.parent;
         transform.SetParent(transform.root);
     }
@@ -66,7 +71,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        image.raycastTarget = true;
+        _image.raycastTarget = true;
         transform.SetParent(parentAfterDrag); //OnDrop will set ParentAfterDrag
 
         InventorySlot newSlot = parentAfterDrag.GetComponent<InventorySlot>();
