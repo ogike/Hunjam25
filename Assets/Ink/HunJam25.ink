@@ -1,4 +1,4 @@
-->sample
+->day_1_morning.engineer
 
 ==sample
 
@@ -13,10 +13,39 @@ This is a game jam, after all.
 ->DONE
 
 
-== day_one_morning
+== day_1_morning
+
+=officer
+OFFI: 
+TODO: write the Officer's outline and then the dialogue
+->winds_down
 
 
 =engineer
+ENGI: Hi!
+ENGI: Another day and I am ready for another concoction!
+
+    * [I'll do my best.]
+        ENGI: I'm sure you will.
+    * [Good morning to you, too.]
+    * (offend)[Did you call my work "concoction"?]
+        ENGI: Oh. I did not mean to offend you. 
+        ->tinkering
+- ENGI: How was your first night on a ship?
+    * (travelled_on_ship)[Actually, this wasn't my first.]
+        CHEF: I travelled on a ships before.
+        CHEF: I just haven't cooked on one.
+        ENGI: Aha. I see.
+    * [It was fine.]
+        ENGI: That's good to hear.
+    * [I'd rather not say.]
+        ENGI: Oh. Okay.
+- (tinkering)ENGI: {offend: Sorry.} I get sucked into all-nighters and tinkering sometimes.
+ENGI: There's always something to fix. Or even improve.
+ENGI: When I get into the groove I even forget to eat.
+ENGI: But I don't want to miss your meals.
+ENGI: {offend: Not concoctions. I got it.}
+ENGI: I'll leave you to it now.
 
 ->winds_down
 
@@ -27,17 +56,15 @@ This is a game jam, after all.
 
 
 
-=officer
-
-->winds_down
-
 
 =winds_down
 -> DONE
 
 
-== day_one_noon
+== day_1_noon
 
+
+-> winds_down
 
 =winds_down
 ->DONE
