@@ -1,8 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "ScriptableObject/Item")]
-public class FoodItem : ScriptableObject
+namespace Model
 {
     public enum FoodType
     {
@@ -13,32 +12,13 @@ public class FoodItem : ScriptableObject
         Cigarette
     }
     
-    public string name;
-
-    public FoodItem cookResult;
-
-    public FoodType baseType;
-    private List<FoodType> contaminations;
-
-    public Sprite image;
-
-    public void AddContamination(FoodType contamination)
+    [CreateAssetMenu(menuName = "ScriptableObject/Item")]
+    public class FoodItem : ScriptableObject
     {
-        contaminations.Add(contamination);
-    }
+        public FoodItem cookResult;
 
-    public List<FoodType> GetContaminations() => contaminations;
+        public FoodType baseType;
 
-    public FoodItem Cook()
-    {
-        if (cookResult)
-        {
-            //Instantiate, add contaminations
-            return cookResult;
-        }
-        else
-        {
-            return null;
-        }
+        public Sprite image;
     }
 }

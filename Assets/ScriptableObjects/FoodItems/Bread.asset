@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a77e7b15d4b8684393d0947c5c269ee, type: 3}
-  m_Name: Vegetables
+  m_Name: Bread
   m_EditorClassIdentifier: Assembly-CSharp::FoodItem
-  name: 
-  cookResult: {fileID: 11400000, guid: 8469d4e0662945e4083c6093f3b524b8, type: 2}
-  baseType: 0
-  image: {fileID: 2016717391, guid: c8c38a1e63e6f6944ab4c40ce90add49, type: 3}
+  cookResult: {fileID: 0}
+  baseType: 1
+  image: {fileID: 1794095123, guid: c8c38a1e63e6f6944ab4c40ce90add49, type: 3}
