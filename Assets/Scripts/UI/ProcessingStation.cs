@@ -1,13 +1,17 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Model;
 using UnityEngine;
 
 public class ProcessingStation : MonoBehaviour
 {
+    public FoodItemRegistry foodItemRegistry;
     private Transform _trans;
 
     private List<InventorySlot> _slots;
-    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,12 +29,12 @@ public class ProcessingStation : MonoBehaviour
         foreach (InventorySlot slot in _slots)
         {
             InventoryItem item = slot.GetInventoryItem();
-            if(!item) continue;
+            if (!item) continue;
             foreach (InventorySlot otherSlot in _slots)
             {
-                if(slot == otherSlot) continue;
+                if (slot == otherSlot) continue;
                 InventoryItem otherItem = otherSlot.GetInventoryItem();
-                if(!otherItem) continue;
+                if (!otherItem) continue;
                 item.AddContamination(otherItem);
             }
         }
@@ -39,18 +43,19 @@ public class ProcessingStation : MonoBehaviour
     public void Cook()
     {
         bool success = false;
-        
+
         foreach (InventorySlot slot in _slots)
         {
             InventoryItem inventoryItem = slot.GetInventoryItem();
-            if(!inventoryItem){
+            if (!inventoryItem)
+            {
                 Debug.Log("Cooking with empty slot");
                 continue; //error handling inside GetInventoryItem()
             }
 
             FoodItem foodItem = inventoryItem.foodItem;
             FoodItem result = foodItem.cookResult;
-            
+
             if (result)
             {
                 inventoryItem.InitializeItem(result);
@@ -83,6 +88,61 @@ public class ProcessingStation : MonoBehaviour
             Debug.Log("Not both slots have items to mix");
             return;
         }
-        //TODO: checking if the items mix, what do they mix into
+
+
+
+        if (item1 == item2)
+        {
+            Debug.Log("Cannot mix two of the same item");
+            return;
+        }
+
+        if (string.Compare(item1.foodItem.name, item2.foodItem.name) > 0)
+        {
+            Debug.Log($"To make sure items are in alphabetical order, I'm swapping item1({item1.foodItem.name}) and item2({item2.foodItem.name}) references");
+            (item1, item2) = (item2, item1);
+        }
+
+#nullable enable
+        FoodItem? result = (item1.foodItem.name, item2.foodItem.name) switch
+#nullable disable
+        {
+            ("GlutenCookedIsPasta", "MeatChoppedCooked") => foodItemRegistry.bolognese,
+            ("Cheese", "Gluten") => foodItemRegistry.breadedCheeseRaw,
+            ("RiceChoppedCookedIsRicepaper", "TobaccoLeavesChoppedBakedIsDriedTobacco") => foodItemRegistry.cigarettes,
+            ("GlutenBakedIsBuns", "MeatCooked") => foodItemRegistry.hotdog,
+            ("Cheese", "GlutenCookedIsPasta") => foodItemRegistry.macNCheese,
+            ("MeatChoped", "PotatoChoppedCooked") => foodItemRegistry.rakottKrumpliRaw,
+            ("MeatChopped", "Rice") => foodItemRegistry.rizseshus,
+            ("FishyChopped", "Rice") => foodItemRegistry.sushi,
+            ("VegetablesChopped", "Rice") => foodItemRegistry.sushiVegan,
+            ("Gluten", "TacoContentCooked") => foodItemRegistry.tacoFinished,
+            ("Gluten", "Meat") => foodItemRegistry.wienerScnitzelRaw,
+
+            _ => null
+        };
+
+        if(Mix(item1, item2, result))
+        {
+            //Mix succesful sound
+        }
+
+    }
+
+#nullable enable
+    private bool Mix(InventoryItem i1, InventoryItem i2, FoodItem? result)
+#nullable disable
+    {
+        if (!result)
+        {
+            Debug.LogWarning($"Mixing would result in null FoodItem!!!!");
+            return false;
+        }
+
+        Debug.Log($"Making {result.name} from {i1.foodItem.name} and {i2.foodItem.name} and adding contaminants [{i1.GetContaminations()}, {i2.GetContaminations()}].");
+        i1.AddContamination(i2);
+        i1.InitializeItem(result);
+
+        return true;
     }
 }

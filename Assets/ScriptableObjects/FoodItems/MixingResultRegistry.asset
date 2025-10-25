@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a00ad76328458446cbd99c87bece1677, type: 3}
+  m_Name: MixingResultRegistry
+  m_EditorClassIdentifier: Assembly-CSharp::Model.FoodItemRegistry
+  bolognese: {fileID: 11400000, guid: 76ab786bcee96481aa5ebcdbc6b866a7, type: 2}
+  breadedCheeseBaked: {fileID: 11400000, guid: d8597e52246a54503885bf628beb6ec4, type: 2}
+  breadedCheeseRaw: {fileID: 11400000, guid: 5bfce48e0f7894f75a9f32deae5b8e67, type: 2}
+  cigarettes: {fileID: 11400000, guid: 7dcc49aa535614a8aa261acf26206481, type: 2}
+  hotdog: {fileID: 11400000, guid: 1cbeddc84b2c540aa842b6aa081f9200, type: 2}
+  macNCheese: {fileID: 11400000, guid: 56f21c0aed5cf47cbb26688e93f956ed, type: 2}
+  rakottKrumpliRaw: {fileID: 11400000, guid: a85564e58defe4da7abab314226225c3, type: 2}
+  rizseshus: {fileID: 11400000, guid: 5917a09cdb8d344acbe5efaba52052c9, type: 2}
+  sushi: {fileID: 11400000, guid: baa8b16d3e53148e386da3823aa46671, type: 2}
+  sushiVegan: {fileID: 11400000, guid: c5ba44bc96a684ccaaddacf61b00b6c2, type: 2}
+  tacoContentRaw: {fileID: 11400000, guid: 0cd6adb8f70174c68a68a16bf3abb68e, type: 2}
+  wienerScnitzelRaw: {fileID: 11400000, guid: 3e63fef4a21214f07a82ee585cc09ba0, type: 2}
