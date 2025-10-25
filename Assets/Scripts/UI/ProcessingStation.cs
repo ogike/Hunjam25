@@ -15,6 +15,24 @@ public class ProcessingStation : MonoBehaviour
         foreach (InventorySlot slot in transform.GetComponentsInChildren<InventorySlot>())
         {
             _slots.Add(slot);
+            slot.RegisterOwnerStation(this);
+        }
+    }
+
+    public void ContaminateCheck()
+    {
+        //this shit ugly.... idc
+        foreach (InventorySlot slot in _slots)
+        {
+            InventoryItem item = slot.GetInventoryItem();
+            if(!item) continue;
+            foreach (InventorySlot otherSlot in _slots)
+            {
+                if(slot == otherSlot) continue;
+                InventoryItem otherItem = otherSlot.GetInventoryItem();
+                if(!otherItem) continue;
+                item.AddContamination(otherItem);
+            }
         }
     }
 
@@ -24,18 +42,10 @@ public class ProcessingStation : MonoBehaviour
         
         foreach (InventorySlot slot in _slots)
         {
-            if (slot.transform.childCount < 1)
-            {
+            InventoryItem inventoryItem = slot.GetInventoryItem();
+            if(!inventoryItem){
                 Debug.Log("Cooking with empty slot");
-                continue;
-            }
-            Transform child = slot.transform.GetChild(0);
-
-            InventoryItem inventoryItem = child.GetComponent<InventoryItem>();
-            if (!inventoryItem)
-            {
-                Debug.LogError(child.name + " is the first child of an InventorySlot without InventoryItem!");
-                continue;
+                continue; //error handling inside GetInventoryItem()
             }
 
             FoodItem foodItem = inventoryItem.foodItem;
@@ -48,7 +58,7 @@ public class ProcessingStation : MonoBehaviour
             }
             else
             {
-                Debug.Log($"Poof, this shit {child.name} didnt cook man");
+                Debug.Log($"Poof, this shit {foodItem.name} didnt cook man");
             }
         }
 
@@ -60,6 +70,19 @@ public class ProcessingStation : MonoBehaviour
 
     public void MixingStation()
     {
-        //
+        if (_slots.Count != 2)
+        {
+            Debug.LogError($"Attempting to mix with {_slots.Count} slots, should be 2");
+            return;
+        }
+
+        InventoryItem item1 = _slots[0].GetInventoryItem();
+        InventoryItem item2 = _slots[1].GetInventoryItem();
+        if (!item1 || !item2)
+        {
+            Debug.Log("Not both slots have items to mix");
+            return;
+        }
+        //TODO: checking if the items mix, what do they mix into
     }
 }

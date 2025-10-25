@@ -30,7 +30,17 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     
     public void AddContamination(FoodType contamination)
     {
+        if(_contaminations.Contains(contamination)) return;
+
         _contaminations.Add(contamination);
+    }
+
+    public void AddContamination(InventoryItem item)
+    {
+        foreach (FoodType contamination in item._contaminations)
+        {
+            this._contaminations.Add(contamination);
+        }
     }
 
     public List<FoodType> GetContaminations() => _contaminations;
@@ -57,6 +67,12 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnEndDrag(PointerEventData eventData)
     {
         image.raycastTarget = true;
-        transform.SetParent(parentAfterDrag);
+        transform.SetParent(parentAfterDrag); //OnDrop will set ParentAfterDrag
+
+        InventorySlot newSlot = parentAfterDrag.GetComponent<InventorySlot>();
+        if (newSlot)
+        {
+            newSlot.AfterDrop();
+        }
     }
 }
