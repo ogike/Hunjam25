@@ -52,7 +52,7 @@ ENGI: I'll leave you to it now.
 
 =navigator
 NAVI: Heeey, Chef! Good to see you!
-- (loop)
+- (opts)
     * [Hello.]
         CHEF: Nice to see you, too.
         ->loop
@@ -64,8 +64,9 @@ NAVI: Heeey, Chef! Good to see you!
     * {loop>1} [So how long 'til we arrive?]
         NAVI: It shouldn't be more than a few days.
         NAVI: Stars willing.
+        NAVI: Are you okay? You look a little...
         ->loop
-    * [Do you smell this? Is something on fire?]
+    * {loop<2}[Do you smell this? Is something on fire?]
         NAVI: No, silly!
         NAVI: These are just my <>
     * [Is that a...? {(cough)|(cough-cough)}]
@@ -73,10 +74,20 @@ NAVI: Heeey, Chef! Good to see you!
         NAVI: My oldest friends, the <>
     * {loop>2}[I'm sorry, I have to go.]
         NAVI: Oh. Okay.
-        NAVI: Don't get out of breath! Hihi...
+        NAVI: Don't get out of breath! Heehee...
         ->winds_down
-- extra-strong cigs!
-    TODO adapt the rest of this conversation
+- extra-strong cigs!->cigs
+- (loop)->opts
+- (cigs)
+    * [But those are dangerous!]
+        NAVI: Yeah. So is flying a ship.
+    * [How can you even smoke in here?]
+        NAVI: Being a navigator... has a few advantages.
+        * * [Like what?]
+        * * [If you say so...]
+- NAVI: Heeheehee...
+NAVI: Anyway, I'll not keep you from your kitchen duties.
+
 ->winds_down
 
 
