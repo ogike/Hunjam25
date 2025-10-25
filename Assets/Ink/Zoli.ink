@@ -28,6 +28,8 @@ ENGI: Hi!
 ENGI: Another day and I am ready for another concoction, just how life goes.
 //there was a line break above, between "another concoction". It's awkward to read in a dialogue box. It would've been better as "...concoction. /linebreak/ Just how life goes!"
 //try to write shorter lines, as we don't have a visual novel-sized textbox.
+// =winds_down
+// olyan outline ami discordon, konkrétumok chefről outline
 
 ENGI: How have you been?
 ENGI: Sorry I get sucked into the all-nighters and tinkering sometimes.
@@ -38,7 +40,6 @@ ENGI: Food has been great so far, thank you very much! Even though I am mostly f
 
 ENGI: I wonder how many days I could go without food, hmm...
 
-//At the end of each scene there should be a "->DONE". This signals to Unity that the current chunk of ink-text is finished.
 
 // Cooking scene
 
