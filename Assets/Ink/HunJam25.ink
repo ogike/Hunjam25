@@ -1,7 +1,7 @@
-/*
+
 Here be lines.
 Sooner or later.
-The sooner the better.
-We're making this for a game jam, after all.
-*/
-
+* [Sooner]
+* [Later]
+- The sooner the better.
+This is a game jam, after all.
