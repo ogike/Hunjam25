@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -10,7 +11,23 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public FoodItem foodItem;
     [HideInInspector] public Transform parentAfterDrag;
-    
+
+    public void Start()
+    {
+        if (foodItem == null)
+        {
+            Debug.LogWarning(transform.name + "oesnt have foodItem set!");
+            return;
+        }
+        InitializeItem(foodItem);
+    }
+
+    public void InitializeItem(FoodItem item)
+    {
+        foodItem = item;
+        image.sprite = foodItem.image;
+    }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         image.raycastTarget = false;

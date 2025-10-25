@@ -15,4 +15,4 @@ MonoBehaviour:
   name: 
   cookResult: {fileID: 11400000, guid: 8469d4e0662945e4083c6093f3b524b8, type: 2}
   baseType: 0
-  image: {fileID: 0}
+  image: {fileID: 2016717391, guid: c8c38a1e63e6f6944ab4c40ce90add49, type: 3}
