@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using SaintsField;
 using UnityEngine;
 
 namespace Model
@@ -12,12 +14,13 @@ namespace Model
         Cigarette
     }
     
+    [Serializable]
     [CreateAssetMenu(menuName = "ScriptableObject/Item")]
     public class FoodItem : ScriptableObject
     {
-        public FoodItem cookResult;
-        public FoodItem chopResult;
-        public FoodItem bakeResult;
+        [Expandable] public FoodItem cookResult;
+        [Expandable] public FoodItem chopResult;
+        [Expandable] public FoodItem bakeResult;
 
         public FoodType baseType;
 
