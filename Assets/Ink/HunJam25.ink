@@ -1,4 +1,4 @@
-->day_1_morning.engineer
+->day_1_morning.navigator
 
 ==sample
 
@@ -51,7 +51,32 @@ ENGI: I'll leave you to it now.
 
 
 =navigator
-
+NAVI: Heeey, Chef! Good to see you!
+- (loop)
+    * [Hello.]
+        CHEF: Nice to see you, too.
+        ->loop
+    * {loop} [Is everything good on our route?]
+        NAVI: Sure! 
+        NAVI: I mean, I haven't checked it today.
+        NAVI: But I don't think much has changed.
+        ->loop
+    * {loop>1} [So how long 'til we arrive?]
+        NAVI: It shouldn't be more than a few days.
+        NAVI: Stars willing.
+        ->loop
+    * [Do you smell this? Is something on fire?]
+        NAVI: No, silly!
+        NAVI: These are just my <>
+    * [Is that a...? {(cough)|(cough-cough)}]
+        NAVI: Oh, yes!
+        NAVI: My oldest friends, the <>
+    * {loop>2}[I'm sorry, I have to go.]
+        NAVI: Oh. Okay.
+        NAVI: Don't get out of breath! Hihi...
+        ->winds_down
+- extra-strong cigs!
+    TODO adapt the rest of this conversation
 ->winds_down
 
 
