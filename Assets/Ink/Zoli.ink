@@ -175,14 +175,14 @@ CHEF: You too!
 //Morning
 
 // IF FOOD WAS GOOD YESTERDAY
-// Nem muszáj Zolinál breakelni a híreket csak example
+// agreement: OFFI breaks the news
 ENGI: Hi CHEF! How did you sleep?
 
 CHEF: Sleep was good but the morning so far is very dooming.
 
 ENGI: Huh? What happened?
 
-CHEF: We got orders from above that we need to immediately divert to an another drop off point.
+CHEF: Didn't you hear? We got orders from above that we need to immediately divert to an another drop off point.
 
 CHEF: This means we won't have...
 
@@ -200,7 +200,7 @@ CHEF: I have to break some bad news. We might run out of potatoes soon.
 
 ENGI: What happened?
 
-CHEF: We got orders from above that we need to immediately divert to an another drop off point.
+CHEF: Didn't you hear? We got orders from above that we need to immediately divert to an another drop off point.
 
 ENGI: Oh shit! Okay, I have to plan fuel resources then. Shit.
 
