@@ -1,4 +1,11 @@
-->day_1_morning.engineer
+VAR current_chapter = -> day_1_morning
+VAR current_chapter_finished = false
+VAR engi_prev_food = "neutral"
+VAR navi_prev_food = "neutral"
+
+EXTERNAL wait(delayTime) // Wait for x seconds before moving to next line
+
+-> current_chapter
 
 ==sample
 
@@ -10,10 +17,13 @@ Sooner or later.
 - The sooner the better.
 This is a game jam, after all.
 
+
 ->DONE
 
 
 == day_1_morning
+
+-> engineer
 
 =officer
 OFFI: 
@@ -47,13 +57,30 @@ ENGI: But I don't want to miss your meals.
 ENGI: {offend: Not concoctions. I got it.}
 ENGI: I'll leave you to it now.
 
-->winds_down
+~ wait (1)
+->navigator
 
 
 =navigator
 
-->winds_down
+NAVI: Heeey, Chef! Good to see you! I'm Lead Navigator Navi! :)
 
+CHEF: Oh hey, I'm Chef, how's it--- Oh, god, do you smell this? Is something on fire?
+
+NAVI: Nooo, silly! That's me and my good old buddies, the exxxtra strong cigs!
+
+CHEF: ...I'm not sure if that's relieving. How are you allowed to smoke in here?
+
+NAVI: ... :)
+
+CHEF: Anyway. How's the journey? Any news about how long this should take until arrival?
+
+NAVI: Oh yeah! We should be around 4 days away from the destination. 
+NAVI: We are aaall in thiiis together until then, isn't that right?
+
+//Narration: They light another cigarette and shuffle away. Sure.
+
+->winds_down
 
 
 
@@ -62,12 +89,18 @@ ENGI: I'll leave you to it now.
 
 
 == day_1_noon
-
-
+//TODO:
 -> winds_down
+
+=day_1_noon_start
+current_chapter_finished = false
+current_chapter = -> day_1_noon
+-> winds_down
+
 
 =winds_down
 ->DONE
+
 
 
 /*
@@ -141,3 +174,6 @@ Noon
     
 
 */
+
+=== function wait(x) ===
+~ return 0
