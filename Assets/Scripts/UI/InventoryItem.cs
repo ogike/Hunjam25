@@ -8,6 +8,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 {
     public Image image;
 
+    public FoodItem foodItem;
     [HideInInspector] public Transform parentAfterDrag;
     
     public void OnBeginDrag(PointerEventData eventData)
