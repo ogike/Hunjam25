@@ -1,7 +1,7 @@
 // Hunjam 2025 - Do you have space for that?
 
-->sample
-
+->day_1
+/*
 ==sample
 
 Here be lines.
@@ -19,18 +19,26 @@ This is a game jam, after all.
 -> day_1_talk_1
 
 == day_1_talk_1
+I commented all the above out.
 
-Hi! 
-Another day and I am ready for another
-concoction, just how life goes.
+*/ 
+==day_1
 
-How have you been? Sorry I get sucked into the all-nighters and tinkering sometimes.
+ENGI: Hi! 
+ENGI: Another day and I am ready for another concoction, just how life goes.
+//there was a line break above, between "another concoction". It's awkward to read in a dialogue box. It would've been better as "...concoction. /linebreak/ Just how life goes!"
+//try to write shorter lines, as we don't have a visual novel-sized textbox.
 
-The spaceship needs attention but I like working with you guys for the better - or maybe worse - goals.
+ENGI: How have you been?
+ENGI: Sorry I get sucked into the all-nighters and tinkering sometimes.
 
-Food has been great so far, thank you very much! Even though I am mostly fueled by caffeine but that's just me.
+ENGI: The spaceship needs attention but I like working with you guys for the better - or maybe worse - goals.
 
-I wonder how many days I could go without food, hmm...
+ENGI: Food has been great so far, thank you very much! Even though I am mostly fueled by caffeine but that's just me.
+
+ENGI: I wonder how many days I could go without food, hmm...
+
+//At the end of each scene there should be a "->DONE". This signals to Unity that the current chunk of ink-text is finished.
 
 // Cooking scene
 
@@ -38,35 +46,35 @@ I wonder how many days I could go without food, hmm...
 
 == day_1_talk_2_g
 
-Thank you xyz for the food! I am feeling a little off right now so I might just go back to the lounge area. Have a nice day!
+ENGI: Thank you xyz for the food! I am feeling a little off right now so I might just go back to the lounge area. Have a nice day!
     -> day_2_talk_1_g
 
 -> 1_talk_2_ng
 
 == 1_talk_2_ng
 
-Okay I have been wrong, you win. Eating actual food does real wonders, I shouldn't just be living off caffeine, what a surprise.
-Thank you for the excellent food! Have a nice day!
+ENGI: Okay I have been wrong, you win. Eating actual food does real wonders, I shouldn't just be living off caffeine, what a surprise.
+ENGI: Thank you for the excellent food! Have a nice day!
     -> day_2_talk_1_ng
 
 
 == day_2_talk_1_g
-Good morning... I am not the smartest in the bunch.. I realized this yesterday on the toilet.
+ENGI: Good morning... I am not the smartest in the bunch.. I realized this yesterday on the toilet.
 
-Sorry to make your work a little harder but I forgot to mention, I have a weak stomach for gluten. Could you please take that into consideration? Your food yesterday tasted amazing either way. 
+ENGI: Sorry to make your work a little harder but I forgot to mention, I have a weak stomach for gluten. Could you please take that into consideration? Your food yesterday tasted amazing either way. 
 
-Thanks so much!
+ENGI: Thanks so much!
 
 ->day_2
 
 == day_2_talk_1_ng
 
-HNJ-AM 2O25 is ready for the day! Me too aswell, yesterday's meal was amazing!
+ENGI: HNJ-AM 2O25 is ready for the day! Me too aswell, yesterday's meal was amazing!
 
-I could work on HAM25 all night long and I was so nourished by the food I only needed half of my caffeine stash. 
-I fixed the broken pipes near the bathroom, padded out one of the chambers, switched out the microchips in .. 
+ENGI: I could work on HAM25 all night long and I was so nourished by the food I only needed half of my caffeine stash. 
+ENGI: I fixed the broken pipes near the bathroom, padded out one of the chambers, switched out the microchips in .. 
 
-Ahh but I don't want to bore you with this so thank you again, can't wait for today's meal!
+ENGI: Ahh but I don't want to bore you with this so thank you again, can't wait for today's meal!
 
 ->day_2
 
@@ -78,21 +86,21 @@ Ahh but I don't want to bore you with this so thank you again, can't wait for to
 
 == day_2_talk_2_g
 
-Thanks for the meal! I am feeling a little under the weather, might be because I miss my cat from home so much.
+ENGI: Thanks for the meal! I am feeling a little under the weather, might be because I miss my cat from home so much.
 
-I think I'll have some rest in the lounge and watch some cat videos.
+ENGI: I think I'll have some rest in the lounge and watch some cat videos.
 
-Have a nice day!
+ENGI: Have a nice day!
 
 -> day_2_talk_2_ng
 
 == day_2_talk_2_ng
 
-Thank you for the amazing meal as always! 
+ENGI: Thank you for the amazing meal as always! 
 
-I am so happy that we are soon finished with this cargo job. I need to see my cat as soon as possible, absolutely important for my soul.
+ENGI: I am so happy that we are soon finished with this cargo job. I need to see my cat as soon as possible, absolutely important for my soul.
 
-I am ready to take on the day and work on the dear HAM25, thanks again!
+ENGI: I am ready to take on the day and work on the dear HAM25, thanks again!
 
 
 ->DONE
