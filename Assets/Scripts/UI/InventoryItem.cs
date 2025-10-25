@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Model;
+using SaintsField;
 
 public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -13,7 +14,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     private List<FoodType> _contaminations;
     
-    public FoodItem foodItem;
+    [Expandable] public FoodItem foodItem;
     [HideInInspector] public Transform parentAfterDrag;
 
     public void Start()
