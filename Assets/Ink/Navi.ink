@@ -200,20 +200,52 @@ ____
 Noon
 IF FOOD WAS GOOD
 
+NAVI: Thanks for the bangin' meal again, you're so great!
+
 IF FOOD WAS BAD
+
+(Navi doesn't show up on the 3rd day if the food was bad)
 
 ________
 DAY 4
 ____
 Morning
 
+NAVI: Ayyo! Hey, I heard some rumors that we are running low on some food, but we will still have lunch today, right?
+
+CHEF: Oh, I'm... really trying my best. It's a little tough without the potatoes though.
+
+CHEF: Also, to be fair, I didn't account for the detour when we embarked on the journey. I'm a little sad these days.
+
+NAVI: Totally got you. I know I'm supposed to be on top of this all, but...
+
+NAVI: I just really wish there were more of us, you know?
+
+CHEF: Maybe on the next route. Fingers crossed?
+
+NAVI: Knocking on wood, bro. Keep it up! I believe in us!
 
 ____
 Noon
 IF FOOD WAS GOOD
 
+NAVI: Hey Chef, thanks for the meal!
+
+NAVI: You're always a bright spot in my day!
+
 IF FOOD WAS BAD
 
+NAVI: Ah man, it's gonna be tough sitting in one place all day like this...
+
+CHEF: Nooo, are you not doing well?
+
+NAVI: Yes, sadly I threw up while eating. Not sure what happened, the food wasn't even bad...
+
+NAVI: I'm so sorry for letting you down, Chef!!! I swear I will train my tummy better!
+
+CHEF: ...Are you kidding me? I'M sorry! 
+
+NAVI: No, I'M sorry!
 ________
 DAY 5
 ____
