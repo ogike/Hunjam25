@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Model;
+using SaintsField;
 using UnityEngine;
 
 public class ProcessingStation : MonoBehaviour
@@ -15,7 +16,7 @@ public class ProcessingStation : MonoBehaviour
         Mix
     }
 
-    public FoodItemRegistry foodItemRegistry;
+    [Expandable] public FoodItemRegistry foodItemRegistry;
     
     private Transform _trans;
 
@@ -175,6 +176,7 @@ public class ProcessingStation : MonoBehaviour
         Debug.Log($"Making {result.name} from {i1.foodItem.name} and {i2.foodItem.name} and adding contaminants [{i1.GetContaminations()}, {i2.GetContaminations()}].");
         i1.AddContamination(i2);
         i1.InitializeItem(result);
+        GameObject.Destroy(i2.gameObject);
 
         return true;
     }

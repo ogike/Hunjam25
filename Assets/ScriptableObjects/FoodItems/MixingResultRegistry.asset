@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: MixingResultRegistry
   m_EditorClassIdentifier: Assembly-CSharp::Model.FoodItemRegistry
   bolognese: {fileID: 11400000, guid: 76ab786bcee96481aa5ebcdbc6b866a7, type: 2}
-  breadedCheeseBaked: {fileID: 11400000, guid: d8597e52246a54503885bf628beb6ec4, type: 2}
   breadedCheeseRaw: {fileID: 11400000, guid: 5bfce48e0f7894f75a9f32deae5b8e67, type: 2}
   cigarettes: {fileID: 11400000, guid: 7dcc49aa535614a8aa261acf26206481, type: 2}
   hotdog: {fileID: 11400000, guid: 1cbeddc84b2c540aa842b6aa081f9200, type: 2}
@@ -22,5 +21,5 @@ MonoBehaviour:
   rizseshus: {fileID: 11400000, guid: 5917a09cdb8d344acbe5efaba52052c9, type: 2}
   sushi: {fileID: 11400000, guid: baa8b16d3e53148e386da3823aa46671, type: 2}
   sushiVegan: {fileID: 11400000, guid: c5ba44bc96a684ccaaddacf61b00b6c2, type: 2}
-  tacoContentRaw: {fileID: 11400000, guid: 0cd6adb8f70174c68a68a16bf3abb68e, type: 2}
+  tacoFinished: {fileID: 11400000, guid: 4328a0d880cc84241b0de7d92a07d5b4, type: 2}
   wienerScnitzelRaw: {fileID: 11400000, guid: 3e63fef4a21214f07a82ee585cc09ba0, type: 2}

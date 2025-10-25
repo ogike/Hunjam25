@@ -26,6 +26,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         }
 
         _contaminations = new List<FoodType>();
+        _image = GetComponent<Image>();
         InitializeItem(foodItem);
     }
     
