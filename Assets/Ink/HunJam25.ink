@@ -99,11 +99,7 @@ NAVI: Heeey, Chef! Good to see you!
         * * [If you say so...]
 - NAVI: Heeheehee...
 NAVI: Anyway, I'll not keep you from your kitchen duties.
-
 ->winds_down
-
-
-
 
 =winds_down
 -> DONE
