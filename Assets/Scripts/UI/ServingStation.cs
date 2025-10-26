@@ -53,6 +53,7 @@ public class ServingStation : MonoBehaviour
         }
 
         DialogueTrigger.Instance.FoodDone(preference);
+        Destroy(inventoryItem.gameObject);
 
         SetIsBlocked(true);
     }

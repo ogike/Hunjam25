@@ -14,7 +14,10 @@ public class PanelsController : MonoBehaviour
     
     private List<GameObject> _panels;
     public GameObject playerInventoryPanel;
+    public GameObject servingPanel;
 
+    public List<ServingStation> servingStations; 
+    
     public GameObject hoverPanel;
     public TextMeshProUGUI hoverText;
     private RectTransform _hoverTrans;
@@ -61,6 +64,8 @@ public class PanelsController : MonoBehaviour
     public void HidePanels()
     {
         _panels.ForEach(panel => panel.SetActive(false));
+        servingPanel.SetActive(false);
+
     }
 
     public void TogglePanel(GameObject panel)
@@ -85,5 +90,11 @@ public class PanelsController : MonoBehaviour
     public void SetHoverText(string text)
     {
         hoverText.text = text;
+    }
+
+    public void StartNewDay()
+    {
+        servingStations.ForEach(station => station.SetIsBlocked(false));
+        HidePanels();
     }
 }

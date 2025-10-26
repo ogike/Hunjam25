@@ -79,7 +79,13 @@ namespace Dialogue
             _foodEngiDone = false;
             _foodOffiDone = false;
             
+            PanelsController.Instance.HidePanels();
+            ScreenFade.Instance.FadeBetweenDays();
+
+            yield return new WaitForSeconds(ScreenFade.Instance.TimeBetweenDays);
+            
             SetCanTalk(true);
+            PanelsController.Instance.StartNewDay();
         }
 
         public void SetCanTalk(bool value)
