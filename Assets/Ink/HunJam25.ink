@@ -1,15 +1,15 @@
 VAR next_chapter = -> day_1_morning
 
 //can be: bad, neutral, good
-VAR ENGI_prev_food = "neutral"
-VAR NAVI_prev_food = "neutral"
-VAR OFFI_prev_food = "neutral"
+VAR ENGI_prev_food = "bad"
+VAR NAVI_prev_food = "good"
+VAR OFFI_prev_food = "bad"
 
 EXTERNAL wait(delayTime) // Wait for x seconds before moving to next line
 EXTERNAL set_first_order(character) //set who shall be have the first server plate, ENGI/NAVI/OFFI
 EXTERNAL set_second_order(character) //set who shall be have the second server plate, ENGI/NAVI/OFFI
 
--> next_chapter
+-> day_1_noon
 
 /*
 ==sample
@@ -152,7 +152,12 @@ OFFI: Keep it up!
 
 =engineer
 TODO paste in the logic from the Officer.
-
+{
+    - ENGI_prev_food == "neutral":
+        -> engineer_neutral
+    - else:
+        -> engineer_bad
+}
 ->DONE
 
 =engineer_neutral
@@ -191,9 +196,9 @@ ENGI: I am feeling a little off...
 ENGI: I think I'm gonna go back to my quarters. 
 ENGI: Have a nice day!
 CHEF: Oh... You too...!
-->winds_down
+->navigator
 
-ENGI: Thank you CHEF for the food!
+ENGI: Thank you Chef for the food!
 
 CHEF: Glad you liked it!
 
@@ -212,6 +217,15 @@ CHEF: You too!
 
 =navigator
 TODO figure out the extra logic (checking for two variables) based on the previous two characters' logic
+
+{
+    -NAVI_prev_food == "good":
+        -> navigator_good
+    - NAVI_prev_food == "neutral": 
+        -> navigator_neutral
+    - else:
+        -> navigator_bad
+}
 
 -> DONE
 =navigator_good
@@ -262,7 +276,7 @@ NAVI: SEE YOU TOMORROW!!!
 
 CHEF: Navi, hi!
 
-CHEF: You look a little puzzled, what's up?
+CHEF: You look a little puzzled. What's up?
 
 NAVI: Nothing, really, the meal was great! //:)
 
