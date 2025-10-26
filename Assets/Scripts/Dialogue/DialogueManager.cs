@@ -19,10 +19,7 @@ namespace Dialogue
 
         public TextAsset inkJson;
         [SerializeField] private TextAsset loadGlobalsJSON;
-
-        public ServingStation servingStation1;
-        public ServingStation servingStation2;
-
+        
         [Header("Params")]
         public float typingSpeed = 0.04f;
         private bool _npcDialogueActive;
@@ -37,6 +34,7 @@ namespace Dialogue
         private int _currentChoiceIndex = 0;
         private bool _hasShownChoice;
         private bool npcTalking;
+        private string _npcTitle;
         private bool _switchedChoiceAlready;
 
         private Coroutine displayLineCoroutine;
@@ -67,11 +65,7 @@ namespace Dialogue
 
         private void Start() 
         {
-            if (servingStation1 == null || servingStation2 == null )
-            {
-                Debug.LogWarning("Stations not set up!");
-            }
-            
+
             _ui = DialogueUI.Instance;
             dialogueIsPlaying = false;
             
@@ -140,26 +134,18 @@ namespace Dialogue
         //TODO: extract this to its own class
         private void BindExternalFunctions()
         {
-            // currentStory.BindExternalFunction ("fadeOutSequence", (float fadeOut, float wait, float fadeIn) => {
-            //     if(debugMode) Debug.Log("InkDebug: Fading out for " + fadeOut + " seconds...");
-            //     
-            //     // Call this here too incase it would fall on the next frame because of StartCoroutines
-            //     _isPausedFromInk = true;
-            //     StartCoroutine(FadeOutSequence(fadeOut, wait, fadeIn));
-            // });
+            currentStory.BindExternalFunction ("fadeOutSequence", (float fadeOut, float wait, float fadeIn) => {
+                if(debugMode) Debug.Log("InkDebug: Fading out for " + fadeOut + " seconds...");
+                
+                // Call this here too incase it would fall on the next frame because of StartCoroutines
+                _isPausedFromInk = true;
+                StartCoroutine(PauseLines(fadeOut + wait + fadeIn));
+                StartCoroutine(ScreenFade.Instance.FadeOutSequence(fadeOut, wait, fadeIn));
+            });
             
             currentStory.BindExternalFunction ("wait", (float time) => {
                 if(debugMode) Debug.Log("InkDebug: Waiting for " + time + " seconds...");
                 StartCoroutine(PauseLines(time));
-            });
-            currentStory.BindExternalFunction ("set_first_order", (string character) => {
-                if(debugMode) Debug.Log($"InkDebug: {character} set their order as first");
-                servingStation1.Initialize(character);
-            });
-            currentStory.BindExternalFunction ("set_second_order", (string character) => {
-                if(debugMode) Debug.Log($"InkDebug: {character} set their order as second");
-                servingStation2.Initialize(character);
-                DialogueTrigger.Instance.SetCanTalk(false);
             });
         }
 
@@ -268,7 +254,7 @@ namespace Dialogue
             _continueInputBuffered = false;
             bool isAddingRichTextTag = false;
             
-            if(npcTalking) _ui.LoadLineNpc(line);
+            if(npcTalking) _ui.LoadLineNpc(line, _npcTitle);
             else           _ui.LoadLinePlayer(line);
 
             // wait to reset frame input
@@ -347,8 +333,12 @@ namespace Dialogue
                             npcTalking = true;
                             break;
                         default:
+                            Debug.LogError($"Character name {characterName} could not be parsed!");
                             break;
                     }
+
+                    if (npcTalking)
+                        _npcTitle = characterName;
                 }
                 else
                 {
