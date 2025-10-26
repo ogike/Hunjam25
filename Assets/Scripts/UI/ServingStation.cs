@@ -39,7 +39,7 @@ public class ServingStation : MonoBehaviour
             return;
         }
 
-        if ((inventoryItem.GetContaminations() & preference.dislikes) != FoodType.Neutral)
+        if ((food.baseType & preference.dislikes) != FoodType.Neutral)
         {
             DialogueManager.Instance.SetVariableString(preference.prevFoodTag, "bad");
         }
