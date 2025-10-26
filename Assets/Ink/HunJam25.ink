@@ -128,8 +128,13 @@ NAVI: We are aaall in thiiis together until then, isn't that right?
 
 =officer
 TODO figure out how to check for the quality of the food — It's probably gonna take a function of some kind
-//this is the place for the function
 
+{
+- OFFI_prev_food == "neutral":
+    -> officer_neutral
+- else:
+    -> officer_bad
+}
 
 =officer_neutral
 
@@ -148,6 +153,7 @@ OFFI: Keep it up!
 =engineer
 TODO paste in the logic from the Officer.
 
+->DONE
 
 =engineer_neutral
 
@@ -207,6 +213,7 @@ CHEF: You too!
 =navigator
 TODO figure out the extra logic (checking for two variables) based on the previous two characters' logic
 
+-> DONE
 =navigator_good
 
 CHEF: Navi, hi!
@@ -280,7 +287,20 @@ NAVI: See you tomorrow!
 =winds_down
 ->DONE
 
+==day_2_morning
+//this part will also need the evaluation function that I have not figured out yet.
 
+=officer
+
+->engineer
+
+=engineer
+
+->navigator
+
+=navigator
+
+->DONE
 
 
 
