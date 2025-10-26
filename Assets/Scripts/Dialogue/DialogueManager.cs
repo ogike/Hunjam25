@@ -23,8 +23,8 @@ namespace Dialogue
         [Header("Params")]
         public float typingSpeed = 0.04f;
         private bool _npcDialogueActive;
-        private GameObject audioLoopDialog;
-        private GameObject audioLoopCooking;
+        public GameObject audioLoopDialog;
+        public GameObject audioLoopCooking;
 
 
         private Story currentStory;

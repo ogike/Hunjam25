@@ -1,2 +1,15 @@
 fileFormatVersion: 2
 guid: 5517fa124b97f3c4d8ad9c5633544c38
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - inkJson: {instanceID: 0}
+  - loadGlobalsJSON: {instanceID: 0}
+  - audioLoopDialog: {fileID: 5059142587238633394, guid: 9381273ee420240cab30f137051f56e2, type: 3}
+  - audioLoopCooking: {fileID: 1033620630798060910, guid: edce7536d12264d3da96f89be4668247, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

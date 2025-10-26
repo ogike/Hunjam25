@@ -1,2 +1,16 @@
 fileFormatVersion: 2
 guid: 68c66db17ed942f44b39d67a565f2b05
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - foodItemRegistry: {fileID: 11400000, guid: 0b9df2679385e4a5fa3b7bb28f36b845, type: 2}
+  - cookingStationSound: {fileID: 2306593770447224335, guid: c02fe98326954448d99e9bf84a99e8d8, type: 3}
+  - mixingStationSound: {fileID: 3326202503095902034, guid: b374b597067ec4c4d8fa48feb485126d, type: 3}
+  - choppingStationSound: {fileID: 4732926707140110140, guid: 7fd33f6b7fc484289957d84a814b1246, type: 3}
+  - bakingStationSound: {fileID: 673228217680707389, guid: 986a52ffbc87942fdb72ec4218b5613a, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
