@@ -18,12 +18,12 @@ namespace UI
             public RectTransform panelImg;
             public TextMeshProUGUI textField;
 
-            [HideInInspector] public ContentSizeFitter textFitter;
+            // [HideInInspector] public ContentSizeFitter textFitter;
             [HideInInspector] public Image image;
 
             public void SetCachedValues()
             {
-                textFitter = textField.GetComponent<ContentSizeFitter>();
+                // textFitter = textField.GetComponent<ContentSizeFitter>();
                 image = panelImg.GetComponent<Image>();
             }
 
@@ -33,7 +33,7 @@ namespace UI
             
                 textField.text = text;
                 textField.maxVisibleCharacters = 0;
-                textFitter.SetLayoutHorizontal();
+                // textFitter.SetLayoutHorizontal();
             }
 
             public void ShowAllText()
@@ -190,7 +190,8 @@ namespace UI
 
         public void LoadLinePlayer(string text)
         {
-
+            PanelsController.Instance.HidePanels();
+            
             //hide other items while text is displaying
             playerChoiceBoxes.ForEach(box => box.Hide());
             npcDialogueBox.Hide();
@@ -201,9 +202,11 @@ namespace UI
         
         public void LoadLineNpc(string text)
         {
+            PanelsController.Instance.HidePanels();
 
             //hide other items while text is didplaying
             playerDialogueBox.Hide();
+            playerChoiceBoxes.ForEach(box => box.Hide());
             npcDialogueContinueIcon.SetActive(false);
             
             npcDialogueBox.ShowText(text);

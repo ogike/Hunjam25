@@ -1,4 +1,5 @@
 using System;
+using Dialogue;
 using UnityEngine;
 
 public class Interactable : MonoBehaviour
@@ -15,6 +16,8 @@ public class Interactable : MonoBehaviour
 
     private void OnMouseDown()
     {
-        PanelsController.Instance.ShowPanel(uiPanel);
+        if(DialogueManager.Instance.dialogueIsPlaying) return;
+        
+        PanelsController.Instance.TogglePanel(uiPanel);
     }
 }

@@ -22,6 +22,15 @@ namespace Dialogue
 
         private bool _canTalk = true;
 
+        private void Awake() 
+        {
+            if (Instance != null)
+            {
+                Debug.LogWarning("Found more than one DialogueTrigger in the scene");
+            }
+            Instance = this;
+        }
+
         public void Food1Done()
         {
             _food1Done = true;
@@ -54,6 +63,7 @@ namespace Dialogue
         public void EnterDialogue()
         {
             DialogueManager.Instance.EnterDialogueMode();
+            PanelsController.Instance.HidePanels();
             _canTalk = false;
         }
 

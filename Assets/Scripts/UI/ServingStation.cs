@@ -73,6 +73,8 @@ public class ServingStation : MonoBehaviour
     
     private void OnMouseDown()
     {
-        PanelsController.Instance.ShowPanel(uiPanel);
+        if(DialogueManager.Instance.dialogueIsPlaying) return;
+
+        PanelsController.Instance.TogglePanel(uiPanel);
     }
 }

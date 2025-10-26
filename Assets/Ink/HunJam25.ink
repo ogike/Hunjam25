@@ -1,9 +1,6 @@
 VAR current_chapter = -> day_1_morning
 VAR current_chapter_finished = false
 
-VAR food_to_serve_for_1 = "ENGI"
-VAR food_to_serve_for_2 = "NAVI"
-
 //can be: bad, neutral, good
 VAR ENGI_prev_food = "neutral"
 VAR NAVI_prev_food = "neutral"
@@ -11,7 +8,7 @@ VAR OFFI_prev_food = "neutral"
 
 EXTERNAL wait(delayTime) // Wait for x seconds before moving to next line
 EXTERNAL set_first_order(character) //set who shall be have the first server plate, ENGI/NAVI/OFFI
-EXTERNAL set_first_order(character) //set who shall be have the second server plate, ENGI/NAVI/OFFI
+EXTERNAL set_second_order(character) //set who shall be have the second server plate, ENGI/NAVI/OFFI
 
 -> current_chapter
 
@@ -65,6 +62,7 @@ ENGI: But I don't want to miss your meals.
 ENGI: {offend: Not concoctions. I got it.}
 ENGI: I'll leave you to it now.
 
+~ set_first_order("ENGI")
 ~ wait (1)
 ->navigator
 
@@ -88,6 +86,7 @@ NAVI: We are aaall in thiiis together until then, isn't that right?
 
 //Narration: They light another cigarette and shuffle away. Sure.
 
+~ set_second_order("NAVI")
 ->winds_down
 
 
@@ -104,9 +103,6 @@ NAVI: We are aaall in thiiis together until then, isn't that right?
 current_chapter_finished = false
 current_chapter = -> day_1_noon
 
-//idk, samples
-VAR food_to_serve_for_1 = "OFFI"
-VAR food_to_serve_for_2 = "NAVI"
 
 -> winds_down
 

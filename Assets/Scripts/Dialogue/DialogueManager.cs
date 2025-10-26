@@ -408,6 +408,8 @@ namespace Dialogue
             if (_currentChoiceIndex >= currentStory.currentChoices.Count)
                 _currentChoiceIndex = 0;
             
+            if(debugMode) Debug.Log($"InkDebug: new choice is {_currentChoiceIndex}");
+            
             _ui.ChangeCoice(_currentChoiceIndex);
         }
 
@@ -418,6 +420,8 @@ namespace Dialogue
             _currentChoiceIndex--;
             if (_currentChoiceIndex < 0)
                 _currentChoiceIndex = currentStory.currentChoices.Count-1;
+            
+            if(debugMode) Debug.Log($"InkDebug: new choice is {_currentChoiceIndex}");
             
             _ui.ChangeCoice(_currentChoiceIndex);
         }

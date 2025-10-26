@@ -49,5 +49,7 @@ public class UserInput : MonoBehaviour
         InteractButtonHeldThisFrame = _interactAction.IsPressed();
 
         PauseMenuPressedThisFrame = _menuAction.WasPressedThisFrame();
+        
+        MoveInput = _moveAction.ReadValue<Vector2>();
     }
 }
