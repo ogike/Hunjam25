@@ -49,6 +49,7 @@ public class PanelsController : MonoBehaviour
         
         HidePanels();
         playerInventoryPanel.SetActive(true);
+        SetHoverVisibility(false);
 
         _hoverTrans = hoverPanel.GetComponent<RectTransform>();
     }
