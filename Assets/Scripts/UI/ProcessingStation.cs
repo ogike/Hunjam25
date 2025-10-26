@@ -20,6 +20,10 @@ public class ProcessingStation : MonoBehaviour
     [Expandable] public FoodItemRegistry foodItemRegistry;
 
     public bool isStoreroom;
+    public GameObject cookingStationSound;
+    public GameObject mixingStationSound;
+    public GameObject choppingStationSound;
+    public GameObject bakingStationSound;
 
     private List<InventorySlot> _slots;
 
@@ -124,7 +128,14 @@ public class ProcessingStation : MonoBehaviour
 
         if (success)
         {
-            //Cook succesful sound
+            GameObject audio = process switch
+            {
+                ProcessingType.Cook => cookingStationSound,
+                ProcessingType.Bake => bakingStationSound,
+                ProcessingType.Chop => choppingStationSound,
+            };
+            Debug.Log($"Playing {audio.name} sound");
+            audio.GetComponent<AudioSource>().Play(0);
         }
     }
 
@@ -185,7 +196,8 @@ public class ProcessingStation : MonoBehaviour
 
         if(Mix(item1, item2, result))
         {
-            //Mix succesful sound
+            Debug.Log("Playing mixing station sound");
+            mixingStationSound.GetComponent<AudioSource>().Play(0);
         }
 
     }
