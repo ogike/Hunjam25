@@ -16,8 +16,14 @@ This is a game jam, after all.
 == day_1_morning
 
 =officer
-OFFI: 
-TODO: write the Officer's outline and then the dialogue
+OFFI: Good morning! (yawn)
+OFFI: I see you have occupied your workstation early.
+OFFI: Have you slept well?
+    * [Yes, I did. Thank you.]//Confirm
+    * [It will take some getting used to.] //disagree
+    * [I started early and hauled in some potatoes...]//deflect
+- //gather it back up
+TODO: Implement the dialogue of Offi written by others
 ->winds_down
 
 
