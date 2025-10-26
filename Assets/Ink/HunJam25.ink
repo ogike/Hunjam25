@@ -23,7 +23,7 @@ This is a game jam, after all.
 
 
 ->DONE
-*/
+
 
 == day_1_morning
 
@@ -129,9 +129,12 @@ NAVI: Anyway, I'll not keep you from your kitchen duties.
 //TODO:
 -> winds_down
 
-=day_1_noon_start
+=officer_neutral
 
 
+->winds_down
+
+=officer_bad
 
 -> winds_down
 
@@ -141,77 +144,7 @@ NAVI: Anyway, I'll not keep you from your kitchen duties.
 
 
 
-/*
-_______________
-Officer OUTLINE
 
-The character is based on Kriszti, effectively.
-At the time of writing I have not seen the concept arts for the character, but there were mentions of her being an anthropomrphic cat.
-
-________
-DAY 1
-____
-Morning
-Checking in with the chef 
-(Could this be the first time they are flying together? Who has more experience on spaceships?)
-For the sake of an efficient tutorialisation the chef's work experience is in kitchens but not on ships. So the officer can assure them that it works pretty much the same.
-
-
-____
-Noon
-Reassuring     
-
-________
-DAY 2
-____
-Morning
-Chatting about the foodstocks, which she herself oversaw the purchase of.
-
-____
-Noon
-    
-
-________
-DAY 3
-____
-Morning
-
-
-____
-Noon
-    
-
-________
-DAY 4
-____
-Morning
-
-
-____
-Noon
-    
-
-________
-DAY 5
-____
-Morning
-
-
-____
-Noon
-    
-
-________
-DAY 6
-____
-Morning
-
-
-____
-Noon
-    
-
-*/
 
 === function wait(x) ===
 ~ return 0
