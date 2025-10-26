@@ -298,19 +298,72 @@ NAVI: See you tomorrow!
 =winds_down
 ->DONE
 
-==day_2_morning
-//this part will also need the evaluation function that I have not figured out yet.
+== day_2_morning
+//TODO:
+-> officer
 
 =officer
 
+{
+- OFFI_prev_food == "neutral":
+    -> officer_neutral
+- else:
+    -> officer_bad
+}
+
+=officer_neutral
+
+
 ->engineer
+
+=officer_bad
+-> engineer
 
 =engineer
 
+{
+    - ENGI_prev_food == "neutral":
+        -> engineer_neutral
+    - else:
+        -> engineer_bad
+}
+
+=engineer_neutral
+
 ->navigator
+
+=engineer_bad
+
+
+
+-> navigator
+
 
 =navigator
 
+{
+    -NAVI_prev_food == "good":
+        -> navigator_good
+    - NAVI_prev_food == "neutral": 
+        -> navigator_neutral
+    - else:
+        -> navigator_bad
+}
+
+
+=navigator_good
+
+    -> winds_down
+
+=navigator_neutral
+
+    ->winds_down
+
+=navigator_bad
+
+    ->winds_down
+
+=winds_down
 ->DONE
 
 
