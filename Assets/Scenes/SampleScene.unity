@@ -875,7 +875,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 978138894}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
 --- !u!224 &170061750 stripped
@@ -1033,7 +1036,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1346144244}
+    m_TransformParent: {fileID: 170061750}
     m_Modifications:
     - target: {fileID: 3104882511093203230, guid: dcf3a418d923423449853bcc49026683, type: 3}
       propertyPath: m_Name
@@ -2787,10 +2790,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 907258849}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
 --- !u!224 &557864776 stripped
@@ -4520,7 +4520,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 907258849}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
 --- !u!224 &837926934 stripped
@@ -4621,7 +4624,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 557864776}
+    m_TransformParent: {fileID: 837926934}
     m_Modifications:
     - target: {fileID: 3104882511093203230, guid: dcf3a418d923423449853bcc49026683, type: 3}
       propertyPath: m_Name
@@ -5641,7 +5644,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3888982103604426809}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
 --- !u!224 &1046002866 stripped
@@ -7243,10 +7249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3888982103604426809}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
 --- !u!224 &1213876313 stripped
@@ -7485,10 +7488,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 978138894}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
 --- !u!224 &1346144244 stripped
@@ -10909,6 +10909,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PanelsController
   playerInventoryPanel: {fileID: 126838469}
+  servingPanel: {fileID: 243766197}
+  servingStations:
+  - {fileID: 2051285000}
+  - {fileID: 1409339432}
+  - {fileID: 18912637}
   hoverPanel: {fileID: 861043818}
   hoverText: {fileID: 1867472659}
 --- !u!114 &2130496097
@@ -11098,7 +11103,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1213876313}
+    m_TransformParent: {fileID: 1046002866}
     m_Modifications:
     - target: {fileID: 3104882511093203230, guid: dcf3a418d923423449853bcc49026683, type: 3}
       propertyPath: m_Name
