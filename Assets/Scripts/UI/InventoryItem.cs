@@ -8,7 +8,7 @@ using UnityEngine.UI;
 using Model;
 using SaintsField;
 
-public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private Image _image;
 
@@ -16,6 +16,8 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     
     [Expandable] public FoodItem foodItem;
     [HideInInspector] public Transform parentAfterDrag;
+
+    private bool _hovering;
 
     public void Start()
     {
@@ -30,6 +32,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         InitializeItem(foodItem);
     }
     
+
     public void AddContamination(FoodType contamination)
     {
         Debug.Log($"Adding contamination to {name}: had {_contaminations}, adding {contamination}");
@@ -78,5 +81,25 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         {
             newSlot.AfterDrop();
         }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        _hovering = true;
+        string itemName = foodItem.name;
+        if (itemName.Trim().Length == 0)
+            itemName = foodItem.name;
+
+        itemName += $"\nType: {foodItem.baseType}\nContaminations: {this._contaminations}";
+        
+        PanelsController.Instance.SetHoverVisibility(true);
+        PanelsController.Instance.SetHoverText(itemName);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if(!_hovering) return; //dont know if this actually catches shit
+        _hovering = false;
+        PanelsController.Instance.SetHoverVisibility(false);
     }
 }

@@ -2,7 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Dialogue;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PanelsController : MonoBehaviour
 {
@@ -10,6 +14,12 @@ public class PanelsController : MonoBehaviour
     
     private List<GameObject> _panels;
     public GameObject playerInventoryPanel;
+
+    public GameObject hoverPanel;
+    public TextMeshProUGUI hoverText;
+    private RectTransform _hoverTrans;
+
+    private bool _hovering;
 
     private void Awake()
     {
@@ -39,6 +49,16 @@ public class PanelsController : MonoBehaviour
         
         HidePanels();
         playerInventoryPanel.SetActive(true);
+
+        _hoverTrans = hoverPanel.GetComponent<RectTransform>();
+    }
+
+    private void LateUpdate()
+    {
+        if (_hovering)
+        {
+            _hoverTrans.position = Mouse.current.position.ReadValue();
+        }
     }
 
     public void HidePanels()
@@ -57,5 +77,16 @@ public class PanelsController : MonoBehaviour
             HidePanels();
             panel.SetActive(true);
         }
+    }
+
+    public void SetHoverVisibility(bool value)
+    {
+        hoverPanel.SetActive(value);
+        _hovering = value;
+    }
+
+    public void SetHoverText(string text)
+    {
+        hoverText.text = text;
     }
 }
