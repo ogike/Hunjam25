@@ -11,6 +11,7 @@ EXTERNAL set_second_order(character) //set who shall be have the second server p
 
 -> next_chapter
 
+/*
 ==sample
 
 Here be lines.
@@ -23,54 +24,71 @@ This is a game jam, after all.
 
 
 ->DONE
-
+*/
 
 == day_1_morning
 
--> engineer
+-> officer
 
 =officer
-OFFI: Good morning! (yawn)
-OFFI: I see you have occupied your workstation early.
-OFFI: Have you slept well?
-    * [Yes, I did. Thank you.]//Confirm
-    * [It will take some getting used to.] //disagree
-        
-    * [I started early and hauled in some potatoes...]//deflect
-        OFFI: Okay. ->enough
-- CHEF: How about you?
-OFFI: I have my complaints, but I won't bore you with them.
-- (enough) OFFI: You have a lot to do here.
-OFFI: Enough on your plate. Pardon the pun.
-OFFI: Anyway, carry on!
-->winds_down
+OFFI: Good morning, Chef! *yawn* 
+
+OFFI: I see you have occupied your workstation early. Have you slept well?
+
+CHEF: Oh, Officer, hi, good morning!
+
+CHEF: I, uh, yes, I've just been bringin' in some potatoes from the storage room, you know -
+
+OFFI: Don't worry about the formalities. Just call me Offi, meow.
+
+CHEF: Yes, ma'am! I mean, yes, Offi! Meow?
+
+OFFI: Meow!
+
+->engineer
 
 
 =engineer
-ENGI: Hi!
-ENGI: Another day and I am ready for another concoction!
+ENGI: Hi! 
 
-    * [I'll do my best.]
-        ENGI: I'm sure you will.
-    * [Good morning to you, too.]
-    * (offend)[Did you call my work "concoction"?]
-        ENGI: Oh. I did not mean to offend you. 
-        ->tinkering
-- ENGI: How was your first night on a ship?
-    * (travelled_on_ship)[Actually, this wasn't my first.]
-        CHEF: I travelled on a ships before.
-        CHEF: I just haven't cooked on one.
-        ENGI: Aha. I see.
-    * [It was fine.]
-        ENGI: That's good to hear.
-    * [I'd rather not say.]
-        ENGI: Oh. Okay.
-- (tinkering)ENGI: {offend: Sorry.} I get sucked into all-nighters and tinkering sometimes.
-ENGI: There's always something to fix. Or even improve.
-ENGI: When I get into the groove I even forget to eat.
-ENGI: But I'll try not to miss your meals.
-ENGI: {offend: Not concoctions. I got it.}
-ENGI: I'll leave you to it now.
+CHEF: Hey! You must be ENGI, right?
+
+ENGI: That's me! The engineer.
+
+ENGI: Another day and I am ready for another...
+
+CHEF: Another what?
+
+ENGI: ...concoction of course! Have to keep those wheels turning.
+
+ENGI: And how are your wheels?
+
+CHEF: My wheels..?
+
+ENGI: Oh! I mean your... spoons?
+
+ENGI: Sorry I get sucked into the all-nighters and tinkering sometimes.
+
+CHEF: I can see that. Do you take breaks at least?
+
+ENGI: The spaceship needs attention at all times!
+
+ENGI: But I like working with you guys so far.
+
+ENGI: For the better - or maybe worse - goals.
+
+ENGI: So I guess these will be my breaks.
+
+CHEF: I'm glad. Maybe try to limit your caffeine intake though.
+
+CHEF: Haven't seen you without a coffee so far.
+
+ENGI: You wound me, that's what fuels me. 
+
+ENGI: I wonder how many days I could go without food, hmm...
+
+CHEF: Maybe don't try that.
+
 
 ~ set_first_order("ENGI")
 ~ wait (1)
@@ -78,49 +96,35 @@ ENGI: I'll leave you to it now.
 
 
 =navigator
+//there are emojis in this sections that I commented out, as I don't think we'll be able to handle them.
 NAVI: Heeey, Chef! Good to see you!
-- (opts)
-    * [Hello.]
-        CHEF: Nice to see you, too.
-        ->loop
-    * {loop} [Is everything good on our route?]
-        NAVI: Sure! 
-        NAVI: I mean, I haven't checked it today.
-        NAVI: But I don't think much has changed.
-        ->loop
-    * {loop>1} [So how long 'til we arrive?]
-        NAVI: It shouldn't be more than a few days.
-        NAVI: Stars willing.
-        NAVI: Are you okay? You look a little...
-        ->loop
-    * {loop<2}[Do you smell this? Is something on fire?]
-        NAVI: No, silly!
-        NAVI: These are just my <>
-    * [Is that a...? {(cough)|(cough-cough)}]
-        NAVI: Oh, yes!
-        NAVI: My oldest friends, the <>
-    * {loop>2}[I'm sorry, I have to go.]
-        NAVI: Oh. Okay.
-        NAVI: Don't get out of breath! Heehee...
-        ->winds_down
-- extra-strong cigs!->cigs
-- (loop)->opts
-- (cigs)
-    * [But those are dangerous!]
-        NAVI: Yeah. So is flying a ship.
-    * [How can you even smoke in here?]
-        NAVI: Being a navigator... has a few advantages.
-        * * [Like what?]
-        * * [If you say so...]
-- NAVI: Heeheehee...
-NAVI: Anyway, I'll not keep you from your kitchen duties.
+
+NAVI: I'm Lead Navigator Navi! //:)
+
+CHEF: Oh hey, I'm Chef, how's it...
+
+CHEF: Oh, god, do you smell this? Is something on fire?
+
+NAVI: Nooo, silly!
+
+NAVI: That's me and my good old buddies, the exxxtra strong cigarettes!
+
+CHEF: ...I'm not sure if that's relieving. How are you allowed to smoke in here?
+
+NAVI: Heehee... //:)
+
+NAVI: Let's call it Navigator's Privilege.
+
+CHEF: Anyway. How's the journey?
+
+CHEF: Any news about how long this should take until arrival?
+
+NAVI: Oh, yeah! We should be around 4 days away from the destination. 
+NAVI: We are aaall in thiiis together until then, isn't that right?
 
 ~ set_second_order("NAVI")
 ~ next_chapter = -> day_1_noon
 
-->winds_down
-
-=winds_down
 
 -> DONE
 
@@ -145,7 +149,7 @@ OFFI: Keep it up!
 =engineer_neutral
 
 ENGI: You were right.
-ENGI: {day_1_morning.engineer.offend: They are really not concoctions.}
+ENGI: They are really not concoctions.
 ENGI: A good meal really refills the body.
 ENGI: Well done, Chef!
 
