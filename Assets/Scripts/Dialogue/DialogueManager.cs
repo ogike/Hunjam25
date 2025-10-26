@@ -23,6 +23,8 @@ namespace Dialogue
         [Header("Params")]
         public float typingSpeed = 0.04f;
         private bool _npcDialogueActive;
+        private GameObject audioLoopDialog;
+        private GameObject audioLoopCooking;
 
 
         private Story currentStory;
@@ -159,8 +161,10 @@ namespace Dialogue
             ContinueStory();
         }
 
-        public void EnterDialogueMode() 
+        public void EnterDialogueMode()
         {
+            audioLoopCooking.GetComponent<AudioSource>().Pause();
+            audioLoopDialog.GetComponent<AudioSource>().Play(0);
             //currentStory.ChoosePathString(inkPath);
             dialogueIsPlaying = true;
             _hasShownChoice = false;
@@ -175,6 +179,8 @@ namespace Dialogue
             yield return new WaitForSeconds(0.2f);
 
             StopListeningToStoryVariable(currentStory);
+            audioLoopCooking.GetComponent<AudioSource>().Play(0);
+            audioLoopDialog.GetComponent<AudioSource>().Pause();
 
             dialogueIsPlaying = false;
             _ui.HideDialogueBoxes();
