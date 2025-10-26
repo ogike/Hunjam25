@@ -8,6 +8,7 @@ VAR NAVI_prev_food = "bad"
 
 EXTERNAL wait(delayTime) // Wait for x seconds before moving to next line
 
+==start
 -> next_chapter
 
 /*

@@ -161,7 +161,7 @@ namespace Dialogue
 
         public void EnterDialogueMode() 
         {
-            //currentStory.ChoosePathString(inkPath);
+            currentStory.ChoosePathString("start");
             dialogueIsPlaying = true;
             _hasShownChoice = false;
             _npcDialogueActive = true;
