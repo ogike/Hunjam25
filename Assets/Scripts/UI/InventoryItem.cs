@@ -101,7 +101,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         if (itemName.Length == 0)
             itemName = foodItem.name;
 
-        itemName += $"\nType: {foodItem.baseType}\nContaminations: {this._contaminations}";
+        itemName += $"\nType: {foodItem.baseType}\n";
         
         PanelsController.Instance.SetHoverVisibility(true);
         PanelsController.Instance.SetHoverText(itemName);

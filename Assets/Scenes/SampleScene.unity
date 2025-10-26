@@ -208,8 +208,12 @@ PrefabInstance:
       value: InventorySlot (3)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -695,8 +699,12 @@ PrefabInstance:
       value: InventorySlot (9)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -799,6 +807,22 @@ PrefabInstance:
     - target: {fileID: 5643264639497233275, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Name
       value: InventorySlot
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7837296879216142505, guid: d4133ae69a4260b42979a5dba09639f0, type: 3}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -1151,8 +1175,12 @@ PrefabInstance:
       value: InventorySlot
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -1257,8 +1285,12 @@ PrefabInstance:
       value: InventorySlot (3)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -1363,8 +1395,12 @@ PrefabInstance:
       value: InventorySlot (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -1473,7 +1509,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &243766198
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1896,8 +1932,12 @@ PrefabInstance:
       value: InventorySlot
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -2517,8 +2557,12 @@ PrefabInstance:
       value: InventorySlot
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -2728,8 +2772,12 @@ PrefabInstance:
       value: InventorySlot (2)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -3203,8 +3251,12 @@ PrefabInstance:
       value: InventorySlot (22)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -3410,8 +3462,12 @@ PrefabInstance:
       value: InventorySlot (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -3592,8 +3648,12 @@ PrefabInstance:
       value: InventorySlot (15)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -3935,8 +3995,12 @@ PrefabInstance:
       value: InventorySlot
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -4041,8 +4105,12 @@ PrefabInstance:
       value: InventorySlot (17)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -4147,8 +4215,12 @@ PrefabInstance:
       value: InventorySlot (11)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -4456,8 +4528,12 @@ PrefabInstance:
       value: InventorySlot (20)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -4609,6 +4685,22 @@ PrefabInstance:
     - target: {fileID: 5643264639497233275, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Name
       value: InventorySlot
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7837296879216142505, guid: d4133ae69a4260b42979a5dba09639f0, type: 3}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -4800,8 +4892,12 @@ PrefabInstance:
       value: InventorySlot (28)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -5012,8 +5108,12 @@ PrefabInstance:
       value: InventorySlot (13)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -5118,8 +5218,12 @@ PrefabInstance:
       value: InventorySlot (10)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -5748,8 +5852,12 @@ PrefabInstance:
       value: InventorySlot (26)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -5932,6 +6040,22 @@ PrefabInstance:
     - target: {fileID: 5643264639497233275, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Name
       value: InventorySlot
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7837296879216142505, guid: d4133ae69a4260b42979a5dba09639f0, type: 3}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -6183,8 +6307,12 @@ PrefabInstance:
       value: InventorySlot (29)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -6576,8 +6704,12 @@ PrefabInstance:
       value: InventorySlot (4)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -7424,8 +7556,12 @@ PrefabInstance:
       value: InventorySlot (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -7670,8 +7806,12 @@ PrefabInstance:
       value: InventorySlot (23)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -7776,8 +7916,12 @@ PrefabInstance:
       value: InventorySlot (16)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -7882,8 +8026,12 @@ PrefabInstance:
       value: InventorySlot (5)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -8127,8 +8275,12 @@ PrefabInstance:
       value: InventorySlot (27)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -8327,8 +8479,12 @@ PrefabInstance:
       value: InventorySlot (19)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -8433,8 +8589,12 @@ PrefabInstance:
       value: InventorySlot (12)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -8661,8 +8821,12 @@ PrefabInstance:
       value: InventorySlot (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -9052,8 +9216,12 @@ PrefabInstance:
       value: InventorySlot (24)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -9236,8 +9404,12 @@ PrefabInstance:
       value: InventorySlot (18)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -9478,8 +9650,12 @@ PrefabInstance:
       value: InventorySlot (25)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -9793,8 +9969,12 @@ PrefabInstance:
       value: InventorySlot (3)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -10035,8 +10215,12 @@ PrefabInstance:
       value: InventorySlot (6)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -10373,8 +10557,12 @@ PrefabInstance:
       value: InventorySlot (7)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -10554,8 +10742,12 @@ PrefabInstance:
       value: InventorySlot (21)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -10911,8 +11103,12 @@ PrefabInstance:
       value: InventorySlot (2)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -11017,8 +11213,12 @@ PrefabInstance:
       value: InventorySlot (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -11436,8 +11636,12 @@ PrefabInstance:
       value: InventorySlot (8)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -11622,8 +11826,12 @@ PrefabInstance:
       value: InventorySlot (2)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -11844,8 +12052,12 @@ PrefabInstance:
       value: InventorySlot (14)
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x
@@ -12236,8 +12448,12 @@ PrefabInstance:
       value: InventorySlot
       objectReference: {fileID: 0}
     - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062711859045416121, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
       propertyPath: m_Pivot.x

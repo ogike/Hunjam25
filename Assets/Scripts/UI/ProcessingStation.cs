@@ -196,7 +196,7 @@ public class ProcessingStation : MonoBehaviour
     {
         if (!result)
         {
-            Debug.LogWarning($"Mixing would result in null FoodItem!!!!");
+            Debug.Log($"Mixing would result in null FoodItem!!!!");
             return false;
         }
 
