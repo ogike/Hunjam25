@@ -89,9 +89,6 @@ ENGI: I wonder how many days I could go without food, hmm...
 
 CHEF: Maybe don't try that.
 
-
-~ set_first_order("ENGI")
-~ wait (1)
 ->navigator
 
 
@@ -122,38 +119,63 @@ CHEF: Any news about how long this should take until arrival?
 NAVI: Oh, yeah! We should be around 4 days away from the destination. 
 NAVI: We are aaall in thiiis together until then, isn't that right?
 
-~ set_second_order("NAVI")
-~ next_chapter = -> day_1_noon
-
-
 -> DONE
 
 
 == day_1_noon
 //TODO:
--> winds_down
+-> officer
+
+=officer
+TODO figure out how to check for the quality of the food — It's probably gonna take a function of some kind
+//this is the place for the function
+
 
 =officer_neutral
 
-OFFI: Hey!
-OFFI: I see you already got the hang of the job.
-OFFI: Thank you for the great meal!
-OFFI: Keep it up!
+OFFI: So yes, as I was saying, they did a really great job with the...
 
-->winds_down
+OFFI: Oh hey, thank you for the meal!
+
+OFFI: I see you already got the hang of the job.
+
+OFFI: Keep it up!
+->engineer
 
 =officer_bad
+-> engineer
 
--> winds_down
+=engineer
+TODO paste in the logic from the Officer.
+
 
 =engineer_neutral
 
-ENGI: You were right.
-ENGI: They are really not concoctions.
-ENGI: A good meal really refills the body.
-ENGI: Well done, Chef!
+ENGI: Okay I have been wrong, you win.
 
-->winds_down
+CHEF: Did we have a bet going on?
+
+ENGI: No, you win in health advices.
+
+CHEF: That's my job after all.
+
+CHEF: Spent all those years collecting debt for it.
+
+ENGI: Yeah...
+
+ENGI: But yes, eating actual food does real wonders.
+
+ENGI: I shouldn't just be living off caffeine, what a surprise.
+
+ENGI: Thank you for the excellent food!
+
+ENGI: Have a nice day!
+
+CHEF: Please leave coffee for the others too!
+
+ENGI: Will do!
+
+->navigator
 
 =engineer_bad
 
@@ -165,13 +187,93 @@ ENGI: Have a nice day!
 CHEF: Oh... You too...!
 ->winds_down
 
+ENGI: Thank you CHEF for the food!
+
+CHEF: Glad you liked it!
+
+ENGI: I am feeling a little off right now...
+
+ENGI: I might just go back to my quarters...
+
+ENGI: Have a nice day!
+
+CHEF: Oh...
+
+CHEF: You too!
+
+-> navigator
+
+
+=navigator
+TODO figure out the extra logic (checking for two variables) based on the previous two characters' logic
+
+=navigator_good
+
+CHEF: Navi, hi!
+
+CHEF: How was the meal?
+
+NAVI: Boss, not gonna lie, it was so perfect. 
+
+NAVI: Like, I never thought you would guess that I like tobacco leaves in my food.
+
+NAVI: But seems like you are just a kitchen genius.
+
+CHEF: I... Eugh... 
+
+CHEF: I just threw up in my mouth now that you bring it up.
+
+NAVI: Genius, I tell you!
+
+-> winds_down
+
 =navigator_neutral
 
+NAVI: CHEF!!!
+
+CHEF: NAVI!!!
+
+NAVI: I HAVE AN IDEA!!!
+
+NAVI: Okay hear me out.
+
+CHEF: Mhm.
+
+NAVI: Tobacco leaves.
+
+CHEF: Mhm?
+
+NAVI: In my food. In my tummy.
+
+CHEF: Huh...?
+
+NAVI: SEE YOU TOMORROW!!!
 
 ->winds_down
 
 =navigator_bad
 
+CHEF: Navi, hi!
+
+CHEF: You look a little puzzled, what's up?
+
+NAVI: Nothing, really, the meal was great! //:)
+
+CHEF: ...You sure? 
+
+NAVI: Oh, totally!
+
+NAVI: ...
+
+NAVI: Although... mmm...
+
+NAVI: Could it maybe be a little more... Unhealthy, if this makes sense?
+
+CHEF: Of... course! I think I know what you mean.
+
+CHEF: See you tomorrow?
+
+NAVI: See you tomorrow!
 
 ->winds_down
 
