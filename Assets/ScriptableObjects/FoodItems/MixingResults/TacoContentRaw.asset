@@ -15,7 +15,8 @@ MonoBehaviour:
   cookResult: {fileID: 11400000, guid: cbb07ad2300c04062a89cacf52b33ab0, type: 2}
   chopResult: {fileID: 0}
   bakeResult: {fileID: 0}
-  baseType: 2
+  baseType: 1
   image: {fileID: 2016717391, guid: c8c38a1e63e6f6944ab4c40ce90add49, type: 3}
   isEdible: 0
   isResultOfMixing: 1
+  displayName: Taco Content Base
