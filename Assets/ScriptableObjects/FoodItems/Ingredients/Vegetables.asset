@@ -16,7 +16,7 @@ MonoBehaviour:
   chopResult: {fileID: 11400000, guid: 6906f95a3c6cd4431a817701a9a477cc, type: 2}
   bakeResult: {fileID: 0}
   baseType: 1
-  image: {fileID: 2016717391, guid: c8c38a1e63e6f6944ab4c40ce90add49, type: 3}
+  image: {fileID: 2590813072966855596, guid: 4ae446a228882744f983ba3e20f59bb3, type: 3}
   isEdible: 0
   isResultOfMixing: 0
   displayName: Vegetables

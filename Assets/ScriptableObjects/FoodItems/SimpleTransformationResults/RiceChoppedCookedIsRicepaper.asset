@@ -16,7 +16,7 @@ MonoBehaviour:
   chopResult: {fileID: 0}
   bakeResult: {fileID: 0}
   baseType: 0
-  image: {fileID: 2016717391, guid: c8c38a1e63e6f6944ab4c40ce90add49, type: 3}
+  image: {fileID: 7895287117424114174, guid: b35bce5d3889df04d940c59b928c779f, type: 3}
   isEdible: 0
   isResultOfMixing: 0
   displayName: Rice Paper
