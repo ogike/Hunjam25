@@ -221,7 +221,7 @@ namespace UI
             npcDialogueContinueIcon.SetActive(false);
             
             npcDialogueBox.ShowText(text);
-            playerDialogueBox.ShowTitle(npcTitle);
+            npcDialogueBox.ShowTitle(npcTitle);
         }
         
         public void SetNpcTextVisibleCharacters(int num)
