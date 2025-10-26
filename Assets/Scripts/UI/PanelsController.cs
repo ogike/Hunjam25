@@ -43,10 +43,6 @@ public class PanelsController : MonoBehaviour
         if (_panels.Contains(playerInventoryPanel))
             _panels.Remove(playerInventoryPanel);
 
-        //spaghetti woooooo
-        _panels.Add(DialogueManager.Instance.servingStation1.uiPanel);
-        _panels.Add(DialogueManager.Instance.servingStation2.uiPanel);
-        
         HidePanels();
         playerInventoryPanel.SetActive(true);
         SetHoverVisibility(false);

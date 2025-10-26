@@ -19,10 +19,7 @@ namespace Dialogue
 
         public TextAsset inkJson;
         [SerializeField] private TextAsset loadGlobalsJSON;
-
-        public ServingStation servingStation1;
-        public ServingStation servingStation2;
-
+        
         [Header("Params")]
         public float typingSpeed = 0.04f;
         private bool _npcDialogueActive;
@@ -68,11 +65,7 @@ namespace Dialogue
 
         private void Start() 
         {
-            if (servingStation1 == null || servingStation2 == null )
-            {
-                Debug.LogWarning("Stations not set up!");
-            }
-            
+
             _ui = DialogueUI.Instance;
             dialogueIsPlaying = false;
             
@@ -152,15 +145,6 @@ namespace Dialogue
             currentStory.BindExternalFunction ("wait", (float time) => {
                 if(debugMode) Debug.Log("InkDebug: Waiting for " + time + " seconds...");
                 StartCoroutine(PauseLines(time));
-            });
-            currentStory.BindExternalFunction ("set_first_order", (string character) => {
-                if(debugMode) Debug.Log($"InkDebug: {character} set their order as first");
-                servingStation1.Initialize(character);
-            });
-            currentStory.BindExternalFunction ("set_second_order", (string character) => {
-                if(debugMode) Debug.Log($"InkDebug: {character} set their order as second");
-                servingStation2.Initialize(character);
-                DialogueTrigger.Instance.SetCanTalk(false);
             });
         }
 

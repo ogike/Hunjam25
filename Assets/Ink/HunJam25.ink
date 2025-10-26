@@ -6,8 +6,6 @@ VAR NAVI_prev_food = "neutral"
 VAR OFFI_prev_food = "neutral"
 
 EXTERNAL wait(delayTime) // Wait for x seconds before moving to next line
-EXTERNAL set_first_order(character) //set who shall be have the first server plate, ENGI/NAVI/OFFI
-EXTERNAL set_second_order(character) //set who shall be have the second server plate, ENGI/NAVI/OFFI
 
 -> next_chapter
 
@@ -61,7 +59,6 @@ ENGI: But I don't want to miss your meals.
 ENGI: {offend: Not concoctions. I got it.}
 ENGI: I'll leave you to it now.
 
-~ set_first_order("ENGI")
 ~ wait (1)
 ->navigator
 
@@ -121,7 +118,6 @@ NAVI: We are aaall in thiiis together until then, isn't that right?
 
 //Narration: They light another cigarette and shuffle away. Sure.
 
-~ set_second_order("NAVI")
 ~ next_chapter = -> day_1_noon
 ->winds_down
 
@@ -221,8 +217,4 @@ Noon
 */
 
 === function wait(x) ===
-~ return 0
-=== function set_first_order(x) ===
-~ return 0
-=== function set_second_order(x) ===
 ~ return 0

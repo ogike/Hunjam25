@@ -17,8 +17,13 @@ namespace Dialogue
         [Header("UI")]
         public GameObject visualCue;
 
-        private bool _food1Done = false; 
-        private bool _food2Done = false;
+        private bool _foodNaviDone = false; 
+        private bool _foodEngiDone = false;
+        private bool _foodOffiDone = false;
+
+        public Preference naviPref;
+        public Preference engiPref;
+        public Preference offiPref;
 
         private bool _canTalk = true;
 
@@ -31,24 +36,34 @@ namespace Dialogue
             Instance = this;
         }
 
-        public void Food1Done()
+        public void FoodDone(Preference pref)
         {
-            _food1Done = true;
-            CheckChapterDone();
-        }
-        
-        public void Food2Done()
-        {
-            _food2Done = true;
+            if(engiPref == pref)
+            {
+                _foodEngiDone = true;
+            }
+            else if(naviPref == pref)
+            {
+                _foodNaviDone = true;
+            }
+            else if(offiPref == pref)
+            {
+                _foodOffiDone = true;
+            }
+            else
+            {
+                Debug.LogError("Could not match preference for " + pref);
+            }
             CheckChapterDone();
         }
 
         public void CheckChapterDone()
         {
-            if (_food1Done && _food2Done)
+            if (_foodNaviDone && _foodEngiDone && _foodOffiDone)
             {
-                _food1Done = false;
-                _food2Done = false;
+                _foodNaviDone = false;
+                _foodEngiDone = false;
+                _foodOffiDone = false;
                 //TODO: fade to black
                 EnterDialogue();
             }

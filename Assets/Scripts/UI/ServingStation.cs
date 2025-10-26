@@ -8,9 +8,10 @@ public class ServingStation : MonoBehaviour
 {
     [SerializeField] private InventorySlot slot;
     public GameObject uiPanel;
-    public int number;
 
-    private Preferences _curPreferences;
+    public Preference preference;
+
+    private bool _isBlocked = false;
 
     public void Start()
     {
@@ -20,27 +21,10 @@ public class ServingStation : MonoBehaviour
             Debug.LogWarning("No uiPanel set for this interactable!");
     }
 
-    public void Initialize(string character)
-    {
-        switch (character)
-        {
-            case DialogueManager.NAVI_STRING_TAG:
-                _curPreferences = PreferenceRegistry.Instance.naviPrefs;
-                break;
-            case DialogueManager.OFFI_STRING_TAG:
-                _curPreferences = PreferenceRegistry.Instance.offiPrefs;
-                break;
-            case DialogueManager.ENGI_STRING_TAG:
-                _curPreferences = PreferenceRegistry.Instance.engiPrefs;
-                break;
-            default:
-                Debug.LogError("Wrong tag received by ServingStation: " + character);
-                break;
-        }
-    }
-
     public void Serve()
     {
+        if(_isBlocked) return;
+        
         InventoryItem inventoryItem = slot.GetInventoryItem();
         if (!inventoryItem)
         {
@@ -50,30 +34,33 @@ public class ServingStation : MonoBehaviour
 
         FoodItem food = inventoryItem.foodItem;
 
-        if ((inventoryItem.GetContaminations() & _curPreferences.dislikes) != FoodType.Neutral)
+        if ((inventoryItem.GetContaminations() & preference.dislikes) != FoodType.Neutral)
         {
-            DialogueManager.Instance.SetVariableString(_curPreferences.prevFoodTag, "bad");
+            DialogueManager.Instance.SetVariableString(preference.prevFoodTag, "bad");
         }
-        else if ((food.baseType & _curPreferences.likes) != FoodType.Neutral)
+        else if ((food.baseType & preference.likes) != FoodType.Neutral)
         {
-            DialogueManager.Instance.SetVariableString(_curPreferences.prevFoodTag, "good");
+            DialogueManager.Instance.SetVariableString(preference.prevFoodTag, "good");
         }
         else
         {
-            DialogueManager.Instance.SetVariableString(_curPreferences.prevFoodTag, "neutral");
+            DialogueManager.Instance.SetVariableString(preference.prevFoodTag, "neutral");
         }
-        
-        if(number == 1)
-            DialogueTrigger.Instance.Food1Done();
-        else
-            DialogueTrigger.Instance.Food2Done();
 
-        Destroy(inventoryItem.gameObject);
+        DialogueTrigger.Instance.FoodDone(preference);
+
+        SetIsBlocked(true);
     }
-    
+
+
+    public void SetIsBlocked(bool value)
+    {
+        _isBlocked = value;
+        uiPanel.SetActive(!value);
+    }
     private void OnMouseDown()
     {
-        if(DialogueManager.Instance.dialogueIsPlaying) return;
+        if(DialogueManager.Instance.dialogueIsPlaying || _isBlocked) return;
 
         PanelsController.Instance.TogglePanel(uiPanel);
     }

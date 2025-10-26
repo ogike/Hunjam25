@@ -17,3 +17,6 @@ MonoBehaviour:
   bakeResult: {fileID: 11400000, guid: 634ba988000d54e8682ef640cd80a478, type: 2}
   baseType: 4
   image: {fileID: 2016717391, guid: c8c38a1e63e6f6944ab4c40ce90add49, type: 3}
+  isEdible: 0
+  isResultOfMixing: 0
+  displayName: 
