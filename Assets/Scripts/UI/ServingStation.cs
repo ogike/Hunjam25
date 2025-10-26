@@ -33,6 +33,11 @@ public class ServingStation : MonoBehaviour
         }
 
         FoodItem food = inventoryItem.foodItem;
+        if (!food.isEdible)
+        {
+            Debug.Log("Trying to serve food that is not edible yet!");
+            return;
+        }
 
         if ((inventoryItem.GetContaminations() & preference.dislikes) != FoodType.Neutral)
         {
