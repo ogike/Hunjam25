@@ -122,7 +122,7 @@ NAVI: We are aaall in thiiis together until then, isn't that right?
 //Narration: They light another cigarette and shuffle away. Sure.
 
 ~ set_second_order("NAVI")
-next_chapter = -> day_1_noon
+~ next_chapter = -> day_1_noon
 ->winds_down
 
 
