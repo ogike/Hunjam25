@@ -1,5 +1,4 @@
-VAR current_chapter = -> day_1_morning
-VAR current_chapter_finished = false
+VAR next_chapter = -> day_1_morning
 
 //can be: bad, neutral, good
 VAR ENGI_prev_food = "neutral"
@@ -10,7 +9,7 @@ EXTERNAL wait(delayTime) // Wait for x seconds before moving to next line
 EXTERNAL set_first_order(character) //set who shall be have the first server plate, ENGI/NAVI/OFFI
 EXTERNAL set_second_order(character) //set who shall be have the second server plate, ENGI/NAVI/OFFI
 
--> current_chapter
+-> next_chapter
 
 ==sample
 
@@ -68,6 +67,42 @@ ENGI: I'll leave you to it now.
 
 
 =navigator
+NAVI: Heeey, Chef! Good to see you!
+- (opts)
+    * [Hello.]
+        CHEF: Nice to see you, too.
+        ->loop
+    * {loop} [Is everything good on our route?]
+        NAVI: Sure! 
+        NAVI: I mean, I haven't checked it today.
+        NAVI: But I don't think much has changed.
+        ->loop
+    * {loop>1} [So how long 'til we arrive?]
+        NAVI: It shouldn't be more than a few days.
+        NAVI: Stars willing.
+        NAVI: Are you okay? You look a little...
+        ->loop
+    * {loop<2}[Do you smell this? Is something on fire?]
+        NAVI: No, silly!
+        NAVI: These are just my <>
+    * [Is that a...? {(cough)|(cough-cough)}]
+        NAVI: Oh, yes!
+        NAVI: My oldest friends, the <>
+    * {loop>2}[I'm sorry, I have to go.]
+        NAVI: Oh. Okay.
+        NAVI: Don't get out of breath! Heehee...
+        ->winds_down
+- extra-strong cigs!->cigs
+- (loop)->opts
+- (cigs)
+    * [But those are dangerous!]
+        NAVI: Yeah. So is flying a ship.
+    * [How can you even smoke in here?]
+        NAVI: Being a navigator... has a few advantages.
+        * * [Like what?]
+        * * [If you say so...]
+- NAVI: Heeheehee...
+NAVI: Anyway, I'll not keep you from your kitchen duties.
 
 NAVI: Heeey, Chef! Good to see you! I'm Lead Navigator Navi! :)
 
@@ -87,11 +122,13 @@ NAVI: We are aaall in thiiis together until then, isn't that right?
 //Narration: They light another cigarette and shuffle away. Sure.
 
 ~ set_second_order("NAVI")
+next_chapter = -> day_1_noon
 ->winds_down
 
 
 
 =winds_down
+
 -> DONE
 
 
@@ -100,8 +137,7 @@ NAVI: We are aaall in thiiis together until then, isn't that right?
 -> winds_down
 
 =day_1_noon_start
-current_chapter_finished = false
-current_chapter = -> day_1_noon
+
 
 
 -> winds_down
