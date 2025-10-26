@@ -1035,6 +1035,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1346144244}
     m_Modifications:
+    - target: {fileID: 1294804739062548289, guid: dcf3a418d923423449853bcc49026683, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5939736882591729913, guid: 9a9e2f617a1e4f34fb7d7213f0ea449e, type: 3}
     - target: {fileID: 3104882511093203230, guid: dcf3a418d923423449853bcc49026683, type: 3}
       propertyPath: m_Name
       value: InventoryItem (2)
