@@ -68,7 +68,7 @@ ENGI: Another day and I am ready for another concoction!
 - (tinkering)ENGI: {offend: Sorry.} I get sucked into all-nighters and tinkering sometimes.
 ENGI: There's always something to fix. Or even improve.
 ENGI: When I get into the groove I even forget to eat.
-ENGI: But I don't want to miss your meals.
+ENGI: But I'll try not to miss your meals.
 ENGI: {offend: Not concoctions. I got it.}
 ENGI: I'll leave you to it now.
 
@@ -131,6 +131,10 @@ NAVI: Anyway, I'll not keep you from your kitchen duties.
 
 =officer_neutral
 
+OFFI: Hey!
+OFFI: I see you already got the hang of the job.
+OFFI: Thank you for the great meal!
+OFFI: Keep it up!
 
 ->winds_down
 
@@ -138,6 +142,34 @@ NAVI: Anyway, I'll not keep you from your kitchen duties.
 
 -> winds_down
 
+=engineer_neutral
+
+ENGI: You were right.
+ENGI: {day_1_morning.engineer.offend: They are really not concoctions.}
+ENGI: A good meal really refills the body.
+ENGI: Well done, Chef!
+
+->winds_down
+
+=engineer_bad
+
+ENGI: Thank you for the food, Chef.
+CHEF: I hope you liked it.
+ENGI: I am feeling a little off...
+ENGI: I think I'm gonna go back to my quarters. 
+ENGI: Have a nice day!
+CHEF: Oh... You too...!
+->winds_down
+
+=navigator_neutral
+
+
+->winds_down
+
+=navigator_bad
+
+
+->winds_down
 
 =winds_down
 ->DONE
