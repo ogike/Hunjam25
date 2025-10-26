@@ -1,9 +1,17 @@
 VAR current_chapter = -> day_1_morning
 VAR current_chapter_finished = false
-VAR engi_prev_food = "neutral"
-VAR navi_prev_food = "neutral"
+
+VAR food_to_serve_for_1 = "ENGI"
+VAR food_to_serve_for_2 = "NAVI"
+
+//can be: bad, neutral, good
+VAR ENGI_prev_food = "neutral"
+VAR NAVI_prev_food = "neutral"
+VAR OFFI_prev_food = "neutral"
 
 EXTERNAL wait(delayTime) // Wait for x seconds before moving to next line
+EXTERNAL set_first_order(character) //set who shall be have the first server plate, ENGI/NAVI/OFFI
+EXTERNAL set_first_order(character) //set who shall be have the second server plate, ENGI/NAVI/OFFI
 
 -> current_chapter
 
@@ -95,6 +103,11 @@ NAVI: We are aaall in thiiis together until then, isn't that right?
 =day_1_noon_start
 current_chapter_finished = false
 current_chapter = -> day_1_noon
+
+//idk, samples
+VAR food_to_serve_for_1 = "OFFI"
+VAR food_to_serve_for_2 = "NAVI"
+
 -> winds_down
 
 
@@ -176,4 +189,8 @@ Noon
 */
 
 === function wait(x) ===
+~ return 0
+=== function set_first_order(x) ===
+~ return 0
+=== function set_second_order(x) ===
 ~ return 0

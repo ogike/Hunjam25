@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -16,48 +17,50 @@ namespace Dialogue
         [Header("UI")]
         public GameObject visualCue;
 
-        public bool food1Done = false; 
-        public bool food2Done = false; 
-        
+        private bool _food1Done = false; 
+        private bool _food2Done = false;
 
-        private bool _playerInRange;
-
-        private void Awake() 
-        {
-            _playerInRange = false;
-            visualCue.SetActive(false);
-        }
-
-        private void Update() 
-        {
-            if (_playerInRange && !DialogueManager.Instance.dialogueIsPlaying) 
-            {
-                visualCue.SetActive(true);
-                if (UserInput.Instance.InteractButtonPressedThisFrame)
-                {
-                    EnterDialogue();
-                }
-            }
-            else 
-            {
-                visualCue.SetActive(false);
-            }
-        }
+        private bool _canTalk = true;
 
         public void Food1Done()
         {
-            food1Done = true;
-            if(food2Done) EnterDialogue(); 
+            _food1Done = true;
+            CheckChapterDone();
+        }
+        
+        public void Food2Done()
+        {
+            _food2Done = true;
+            CheckChapterDone();
         }
 
         public void CheckChapterDone()
         {
-            
+            if (_food1Done && _food2Done)
+            {
+                _food1Done = false;
+                _food2Done = false;
+                //TODO: fade to black
+                EnterDialogue();
+            }
+        }
+
+        public void SetCanTalk(bool value)
+        {
+            _canTalk = value;
+            visualCue.SetActive(value);
         }
         
         public void EnterDialogue()
         {
             DialogueManager.Instance.EnterDialogueMode();
+            _canTalk = false;
+        }
+
+        private void OnMouseDown()
+        {
+            if(_canTalk)
+                EnterDialogue();
         }
     }
 }

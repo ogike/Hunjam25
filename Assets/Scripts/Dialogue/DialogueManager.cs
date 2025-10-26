@@ -20,6 +20,9 @@ namespace Dialogue
         public TextAsset inkJson;
         [SerializeField] private TextAsset loadGlobalsJSON;
 
+        public ServingStation servingStation1;
+        public ServingStation servingStation2;
+
         [Header("Params")]
         public float typingSpeed = 0.04f;
         private bool _npcDialogueActive;
@@ -38,10 +41,10 @@ namespace Dialogue
 
         private Coroutine displayLineCoroutine;
 
-        private const string PLAYER_STRING_TAG = "CHEF";
-        private const string ENGI_STRING_TAG = "ENGI";
-        private const string OFFI_STRING_TAG = "OFFI";
-        private const string NAVI_STRING_TAG = "NAVI";
+        public const string PLAYER_STRING_TAG = "CHEF";
+        public const string ENGI_STRING_TAG = "ENGI";
+        public const string OFFI_STRING_TAG = "OFFI";
+        public const string NAVI_STRING_TAG = "NAVI";
 
         private DialogueVariables dialogueVariables;
 
@@ -64,12 +67,18 @@ namespace Dialogue
 
         private void Start() 
         {
+            if (servingStation1 == null || servingStation2 == null )
+            {
+                Debug.LogWarning("Stations not set up!");
+            }
+            
             _ui = DialogueUI.Instance;
             dialogueIsPlaying = false;
             
             currentStory = new Story(inkJson.text);
             BindExternalFunctions();
             StartListeningToStoryVariable(currentStory);
+            DialogueTrigger.Instance.SetCanTalk(true);
         }
 
         private void Update() 
@@ -142,6 +151,15 @@ namespace Dialogue
             currentStory.BindExternalFunction ("wait", (float time) => {
                 if(debugMode) Debug.Log("InkDebug: Waiting for " + time + " seconds...");
                 StartCoroutine(PauseLines(time));
+            });
+            currentStory.BindExternalFunction ("set_first_order", (string character) => {
+                if(debugMode) Debug.Log($"InkDebug: {character} set their order as first");
+                servingStation1.Initialize(character);
+            });
+            currentStory.BindExternalFunction ("set_second_order", (string character) => {
+                if(debugMode) Debug.Log($"InkDebug: {character} set their order as second");
+                servingStation2.Initialize(character);
+                DialogueTrigger.Instance.SetCanTalk(false);
             });
         }
 
@@ -414,15 +432,6 @@ namespace Dialogue
             }
             return variableValue;
         }
-
-        // public IEnumerator FadeOutSequence(float fadeOut, float wait, float fadeIn)
-        // {
-        //     StartCoroutine(PauseLines(fadeOut + wait + fadeIn));
-        //     
-        //     GameManager.Instance.FadeOut(fadeOut);
-        //     yield return new WaitForSeconds(fadeOut + wait);
-        //     GameManager.Instance.FadeIn(fadeIn);
-        // }
 
         private IEnumerator PauseLines(float seconds)
         {
