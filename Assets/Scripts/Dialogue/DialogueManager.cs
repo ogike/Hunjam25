@@ -72,6 +72,13 @@ namespace Dialogue
             currentStory = new Story(inkJson.text);
             BindExternalFunctions();
             StartListeningToStoryVariable(currentStory);
+            DialogueTrigger.Instance.SetCanTalk(false);
+            StartCoroutine(StartFirstDay());
+        }
+
+        public IEnumerator StartFirstDay()
+        {
+            yield return new WaitForSeconds(2);
             DialogueTrigger.Instance.SetCanTalk(true);
         }
 

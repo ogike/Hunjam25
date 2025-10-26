@@ -87,12 +87,13 @@ namespace Dialogue
             _canTalk = value;
             visualCues.ForEach(cue => cue.SetActive(value));
         }
-        
+
         public void EnterDialogue()
         {
             DialogueManager.Instance.EnterDialogueMode();
             PanelsController.Instance.HidePanels();
             _canTalk = false;
+            visualCues.ForEach(cue => cue.SetActive(false));
         }
 
         private void OnMouseDown()
