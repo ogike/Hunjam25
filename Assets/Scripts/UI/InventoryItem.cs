@@ -79,13 +79,15 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         transform.SetParent(parentAfterDrag); //OnDrop will set ParentAfterDrag
 
         InventorySlot oldSlot = _parentBeforeDrag.GetComponent<InventorySlot>();
-        if (oldSlot)
+
+        InventorySlot newSlot = parentAfterDrag.GetComponent<InventorySlot>();
+
+        if (oldSlot && oldSlot.ownerStation != null && oldSlot != newSlot)
         {
             if(oldSlot.ownerStation.isStoreroom)
                 Destroy(oldSlot.gameObject);
         }
-
-        InventorySlot newSlot = parentAfterDrag.GetComponent<InventorySlot>();
+        
         if (newSlot)
         {
             newSlot.AfterDrop();

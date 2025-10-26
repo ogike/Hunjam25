@@ -8,7 +8,7 @@ using UnityEngine.UI;
 namespace Dialogue
 {
     /// <summary>
-    /// Holds everything needed for a dialogue from NPCs side
+    /// This is gonna be the GameManager idgaf
     /// </summary>
     public class DialogueTrigger : MonoBehaviour
     {
@@ -26,6 +26,9 @@ namespace Dialogue
         public Preference offiPref;
 
         private bool _canTalk = true;
+
+        public AnimationCurve fadeInCurve;
+        public AnimationCurve fadeOutCurve;
 
         private void Awake() 
         {
@@ -61,12 +64,19 @@ namespace Dialogue
         {
             if (_foodNaviDone && _foodEngiDone && _foodOffiDone)
             {
-                _foodNaviDone = false;
-                _foodEngiDone = false;
-                _foodOffiDone = false;
-                //TODO: fade to black
-                EnterDialogue();
+                EndOfDay();
             }
+        }
+
+        public void EndOfDay()
+        {
+            _foodNaviDone = false;
+            _foodEngiDone = false;
+            _foodOffiDone = false;
+            
+            ScreenFade.Instance.FadeBetweenDays();
+            SetCanTalk(true);
+
         }
 
         public void SetCanTalk(bool value)

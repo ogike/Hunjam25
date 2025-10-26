@@ -134,13 +134,14 @@ namespace Dialogue
         //TODO: extract this to its own class
         private void BindExternalFunctions()
         {
-            // currentStory.BindExternalFunction ("fadeOutSequence", (float fadeOut, float wait, float fadeIn) => {
-            //     if(debugMode) Debug.Log("InkDebug: Fading out for " + fadeOut + " seconds...");
-            //     
-            //     // Call this here too incase it would fall on the next frame because of StartCoroutines
-            //     _isPausedFromInk = true;
-            //     StartCoroutine(FadeOutSequence(fadeOut, wait, fadeIn));
-            // });
+            currentStory.BindExternalFunction ("fadeOutSequence", (float fadeOut, float wait, float fadeIn) => {
+                if(debugMode) Debug.Log("InkDebug: Fading out for " + fadeOut + " seconds...");
+                
+                // Call this here too incase it would fall on the next frame because of StartCoroutines
+                _isPausedFromInk = true;
+                StartCoroutine(PauseLines(fadeOut + wait + fadeIn));
+                StartCoroutine(ScreenFade.Instance.FadeOutSequence(fadeOut, wait, fadeIn));
+            });
             
             currentStory.BindExternalFunction ("wait", (float time) => {
                 if(debugMode) Debug.Log("InkDebug: Waiting for " + time + " seconds...");

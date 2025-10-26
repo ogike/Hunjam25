@@ -404,6 +404,7 @@ GameObject:
   m_Component:
   - component: {fileID: 19570723}
   - component: {fileID: 19570721}
+  - component: {fileID: 19570724}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -442,6 +443,79 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &19570724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19570719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a3c772cca1c11e41bc8fea5dc2b2631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScreenFade
+  fadeToBlackScreen: {fileID: 1903900048}
+  defaultFadeInTime: 0.5
+  defaultFadeOutTime: 0.5
+  fullBlackTime: 0.3
+  fadeInCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.023326147
+      outSlope: -0.023326147
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.06846669
+    - serializedVersion: 3
+      time: 0.4057768
+      value: 0.83416337
+      inSlope: -0.7306578
+      outSlope: -0.7306578
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.12104276
+      outWeight: 0.07354217
+    - serializedVersion: 3
+      time: 0.9971154
+      value: 0.0047770664
+      inSlope: -0.031245962
+      outSlope: -0.031245962
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.086457536
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  fadeOutCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &46131141 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6110339161323548620, guid: 6f59fbb2609ff4145b17cd733c2c5379, type: 3}
@@ -968,7 +1042,7 @@ PrefabInstance:
     - target: {fileID: 6803670196603097840, guid: dcf3a418d923423449853bcc49026683, type: 3}
       propertyPath: foodItem
       value: 
-      objectReference: {fileID: 11400000, guid: 931044c1363ee4616ad7b0ae38d0fee9, type: 2}
+      objectReference: {fileID: 11400000, guid: cac839f71277d4aaf99b7feac77e01d8, type: 2}
     - target: {fileID: 8143191890132351809, guid: dcf3a418d923423449853bcc49026683, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1453,7 +1527,7 @@ PrefabInstance:
     - target: {fileID: 6803670196603097840, guid: dcf3a418d923423449853bcc49026683, type: 3}
       propertyPath: foodItem
       value: 
-      objectReference: {fileID: 11400000, guid: 931044c1363ee4616ad7b0ae38d0fee9, type: 2}
+      objectReference: {fileID: 11400000, guid: 0722e781c7e17471ca86b350761a2592, type: 2}
     - target: {fileID: 8143191890132351809, guid: dcf3a418d923423449853bcc49026683, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1559,7 +1633,7 @@ PrefabInstance:
     - target: {fileID: 6803670196603097840, guid: dcf3a418d923423449853bcc49026683, type: 3}
       propertyPath: foodItem
       value: 
-      objectReference: {fileID: 11400000, guid: 28bdc1e5ba09748dea84e23fd4ead420, type: 2}
+      objectReference: {fileID: 11400000, guid: 2a081782b952c4e469a1325fe16dafdc, type: 2}
     - target: {fileID: 8143191890132351809, guid: dcf3a418d923423449853bcc49026683, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4556,7 +4630,7 @@ PrefabInstance:
     - target: {fileID: 6803670196603097840, guid: dcf3a418d923423449853bcc49026683, type: 3}
       propertyPath: foodItem
       value: 
-      objectReference: {fileID: 11400000, guid: 931044c1363ee4616ad7b0ae38d0fee9, type: 2}
+      objectReference: {fileID: 11400000, guid: 7dcc49aa535614a8aa261acf26206481, type: 2}
     - target: {fileID: 8143191890132351809, guid: dcf3a418d923423449853bcc49026683, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5024,7 +5098,7 @@ PrefabInstance:
     - target: {fileID: 6803670196603097840, guid: dcf3a418d923423449853bcc49026683, type: 3}
       propertyPath: foodItem
       value: 
-      objectReference: {fileID: 11400000, guid: 931044c1363ee4616ad7b0ae38d0fee9, type: 2}
+      objectReference: {fileID: 11400000, guid: c5ba44bc96a684ccaaddacf61b00b6c2, type: 2}
     - target: {fileID: 8143191890132351809, guid: dcf3a418d923423449853bcc49026683, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -9477,6 +9551,81 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7227938388897361957, guid: 55be2ae5bbdd2c7449f0d4bc36f34fde, type: 3}
   m_PrefabInstance: {fileID: 1880748439}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1903900046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1903900047}
+  - component: {fileID: 1903900049}
+  - component: {fileID: 1903900048}
+  m_Layer: 5
+  m_Name: ScreenFade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1903900047
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903900046}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2130496095}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1903900048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903900046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1903900049
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903900046}
+  m_CullTransparentMesh: 1
 --- !u!1 &1926285833
 GameObject:
   m_ObjectHideFlags: 0
@@ -9969,6 +10118,18 @@ MonoBehaviour:
   naviPref: {fileID: 11400000, guid: 3f12c70f4131189478ab6f175fcde05c, type: 2}
   engiPref: {fileID: 11400000, guid: 84fff1c066311a243aaaf24f55d70865, type: 2}
   offiPref: {fileID: 11400000, guid: c5793aa077b94fd4897c51ed48090705, type: 2}
+  fadeInCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  fadeOutCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!65 &1989575448
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10727,6 +10888,7 @@ RectTransform:
   - {fileID: 8705331}
   - {fileID: 705525371}
   - {fileID: 861043819}
+  - {fileID: 1903900047}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -10945,7 +11107,7 @@ PrefabInstance:
     - target: {fileID: 6803670196603097840, guid: dcf3a418d923423449853bcc49026683, type: 3}
       propertyPath: foodItem
       value: 
-      objectReference: {fileID: 11400000, guid: f49cf3e944c2f934681aa3294f9f654a, type: 2}
+      objectReference: {fileID: 11400000, guid: d8597e52246a54503885bf628beb6ec4, type: 2}
     - target: {fileID: 8143191890132351809, guid: dcf3a418d923423449853bcc49026683, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
