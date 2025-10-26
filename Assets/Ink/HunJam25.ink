@@ -8,7 +8,8 @@ VAR NAVI_prev_food = "bad"
 
 EXTERNAL wait(delayTime) // Wait for x seconds before moving to next line
 
--> next_chapter
+//-> day_3_noon //this is just for testing
+-> next_chapter //only commented out during testing. Should be reactivated before pushing
 
 /*
 ==sample
@@ -591,6 +592,227 @@ NAVI: Ough, sorry, gotta go!
 
 =winds_down
 ->DONE
+
+
+== day_3_morning
+
+-> officer
+
+=officer
+
+CHEF: Offi! I'm so happy to see you!
+
+CHEF: How are... you...?
+
+OFFI: *sigh* Nothing good today, I'm afraid.
+
+OFFI: We will need to drop off all our potato cargo on a planet a few parsecs away.
+
+OFFI: It seems like we will need to go without potatoes for the rest of the ride.
+
+OFFI: Do you think you can handle that?
+
+CHEF: Uuuh... Of course.
+
+CHEF: I think I will be able to manage.
+
+OFFI: I'm really-really sorry.
+
+OFFI: None of us really expected this. Corporate orders.
+
+{OFFI_prev_food == "neutral": -> engineer}
+
+
+OFFI: Oh yeah, another thing.
+
+OFFI: Could you please note down somewhere that I can't eat lactose?
+
+OFFI: I think I haven't let you know beforehand, I'm sorry.
+
+CHEF: Sure, of course!
+    ->engineer
+
+=engineer
+
+{
+    - ENGI_prev_food == "neutral":
+        -> engineer_neutral
+    - else:
+        -> engineer_bad
+}
+
+=engineer_neutral
+
+ENGI: Hi CHEF! How did you sleep?
+
+CHEF: Sleep was good. But the morning so far is very bad.
+
+ENGI: Huh? What happened?
+
+CHEF: Didn't you hear?
+
+CHEF: We got orders from above that we need to immediately divert to an another drop off point.
+
+CHEF: This means we won't have...
+
+ENGI: Oh shit! Okay, I have to plan fuel resources, then!
+
+ENGI: Shit.
+
+ENGI: Sorry, talk to you later, CHEF!
+
+->navigator
+
+=engineer_bad
+
+
+ENGI: Hey CHEF. Sorry if I woke you up in the night going to the toilet.
+
+CHEF: I'm sorry. I might have mixed some gluten in your food..
+
+CHEF: I have to break some bad news. We might run out of potatoes soon.
+
+ENGI: What happened?
+
+CHEF: Didn't you hear?
+
+CHEF: We got orders from above that we need to immediately divert to an another drop-off point.
+
+ENGI: Oh shit! Okay, I have to plan fuel resources, then!
+
+ENGI: Shit.
+
+ENGI: Sorry, talk to you later, CHEF!
+
+
+-> navigator
+
+
+=navigator
+
+CHEF: Thick black smoke, wonder who it is?
+
+NAVI: That's gotta be meee! *cough*
+
+NAVI: Ahh, I'm really not doing good, bro.
+
+NAVI: In fact, I'm so DOWN, I ended up downloading a dating app for navigators.
+
+CHEF: Uh-oh...
+
+CHEF: Any luck so far?
+
+NAVI: No, not really.
+
+NAVI: Everyone is soooo lame, and the conversation is never going *anywhere*...
+
+CHEF: Unlike us!
+
+CHEF: Got it?
+
+CHEF: Cuz we are going somewhere?
+
+NAVI: Oh yeah, not sure about that either. Detour. 
+
+NAVI: But you *huuffff* probably already know.
+
+CHEF: Ah, Navi, please stop blowing smoke in the kitch...
+
+CHEF: Ok-bye.
+
+    ->winds_down
+
+=winds_down
+->DONE
+
+== day_3_noon
+
+
+-> officer
+
+=officer
+
+{
+- OFFI_prev_food == "neutral":
+    -> officer_neutral
+- else:
+    -> officer_bad
+}
+
+=officer_neutral
+OFFI: Great job as always, Chef!
+
+OFFI: See you around!
+->engineer
+
+=officer_bad
+
+OFFI: Gosh, are you sure there was no milk in this?
+
+CHEF: Mmm, let me see, let me see...
+
+CHEF: Oh no.
+
+CHEF: Oh no, I am so sorry.
+
+OFFI: Hey! No worries.
+
+OFFI: I will poop my intestines out though.
+
+OFFI: I hope you don't mind me saying that.
+
+CHEF: I think... I deserve that after poisoning you.
+-> engineer
+
+=engineer
+
+{
+    - ENGI_prev_food == "neutral":
+        -> engineer_neutral
+    - else:
+        -> engineer_bad
+}
+
+=engineer_neutral
+ENGI: Great as ever, CHEF!
+
+CHEF: Thank you! I'm happy you enjoyed it.
+->navigator
+
+=engineer_bad
+
+ENGI: Thank you CHEF!
+
+ENGI: Gotta run!
+
+CHEF: Okay? Bye?
+
+-> navigator
+
+
+=navigator
+
+{
+    -NAVI_prev_food == "good":
+        -> navigator_neutral
+    - NAVI_prev_food == "neutral": 
+        -> navigator_neutral
+    - else:
+        -> winds_down
+}
+
+
+=navigator_neutral
+
+NAVI: Thanks for the bangin' meal again!
+
+NAVI: You're so great!
+    ->winds_down
+
+
+=winds_down
+->DONE
+
 
 
 
