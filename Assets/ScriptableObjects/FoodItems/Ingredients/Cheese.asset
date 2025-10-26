@@ -16,7 +16,7 @@ MonoBehaviour:
   chopResult: {fileID: 0}
   bakeResult: {fileID: 0}
   baseType: 4
-  image: {fileID: 2016717391, guid: c8c38a1e63e6f6944ab4c40ce90add49, type: 3}
+  image: {fileID: 7086425323641251754, guid: 2dd72d9845d71a945a37b266f7facf88, type: 3}
   isEdible: 0
   isResultOfMixing: 0
   displayName: Cheese

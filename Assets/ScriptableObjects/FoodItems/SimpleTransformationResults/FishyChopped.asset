@@ -16,7 +16,7 @@ MonoBehaviour:
   chopResult: {fileID: 0}
   bakeResult: {fileID: 0}
   baseType: 1
-  image: {fileID: 2016717391, guid: c8c38a1e63e6f6944ab4c40ce90add49, type: 3}
+  image: {fileID: 5939736882591729913, guid: 9a9e2f617a1e4f34fb7d7213f0ea449e, type: 3}
   isEdible: 0
   isResultOfMixing: 0
   displayName: Chopped Fish
