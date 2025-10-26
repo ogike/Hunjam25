@@ -1042,7 +1042,7 @@ PrefabInstance:
     - target: {fileID: 6803670196603097840, guid: dcf3a418d923423449853bcc49026683, type: 3}
       propertyPath: foodItem
       value: 
-      objectReference: {fileID: 11400000, guid: cac839f71277d4aaf99b7feac77e01d8, type: 2}
+      objectReference: {fileID: 11400000, guid: 6906f95a3c6cd4431a817701a9a477cc, type: 2}
     - target: {fileID: 8143191890132351809, guid: dcf3a418d923423449853bcc49026683, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5098,7 +5098,7 @@ PrefabInstance:
     - target: {fileID: 6803670196603097840, guid: dcf3a418d923423449853bcc49026683, type: 3}
       propertyPath: foodItem
       value: 
-      objectReference: {fileID: 11400000, guid: c5ba44bc96a684ccaaddacf61b00b6c2, type: 2}
+      objectReference: {fileID: 11400000, guid: b787b11713ba6421b9ebc2cf46b96957, type: 2}
     - target: {fileID: 8143191890132351809, guid: dcf3a418d923423449853bcc49026683, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8525,7 +8525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68c66db17ed942f44b39d67a565f2b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProcessingStation
-  foodItemRegistry: {fileID: 0}
+  foodItemRegistry: {fileID: 11400000, guid: 0b9df2679385e4a5fa3b7bb28f36b845, type: 2}
   isStoreroom: 0
 --- !u!114 &1691210184
 MonoBehaviour:
