@@ -64,19 +64,21 @@ namespace Dialogue
         {
             if (_foodNaviDone && _foodEngiDone && _foodOffiDone)
             {
-                EndOfDay();
+                StartCoroutine(EndOfDay());
             }
         }
 
-        public void EndOfDay()
+        public IEnumerator EndOfDay()
         {
+            ScreenFade.Instance.FadeBetweenDays();
+            
+            yield return new WaitForSeconds(ScreenFade.Instance.TimeBetweenDays);
+            
             _foodNaviDone = false;
             _foodEngiDone = false;
             _foodOffiDone = false;
             
-            ScreenFade.Instance.FadeBetweenDays();
             SetCanTalk(true);
-
         }
 
         public void SetCanTalk(bool value)

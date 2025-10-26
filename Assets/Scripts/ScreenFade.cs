@@ -13,6 +13,8 @@ public class ScreenFade : MonoBehaviour
     public float defaultFadeOutTime;
     public float fullBlackTime;
 
+    public float TimeBetweenDays => defaultFadeInTime + defaultFadeOutTime + fullBlackTime;
+
     public AnimationCurve fadeInCurve;
     public AnimationCurve fadeOutCurve;
     private void Awake() 
