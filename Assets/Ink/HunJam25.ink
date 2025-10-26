@@ -1,9 +1,10 @@
 VAR next_chapter = -> day_1_morning
 
 //can be: bad, neutral, good
-VAR ENGI_prev_food = "neutral"
-VAR NAVI_prev_food = "neutral"
-VAR OFFI_prev_food = "neutral"
+VAR OFFI_prev_food = "bad"
+VAR ENGI_prev_food = "bad"
+VAR NAVI_prev_food = "bad"
+
 
 EXTERNAL wait(delayTime) // Wait for x seconds before moving to next line
 
@@ -319,15 +320,19 @@ CHEF: Great! Everything going according to plan then.
 
 OFFI: That's right.
 
-OFFI: Oh, I had a weird dream last night about the cheese, that we were running out...
+OFFI: Oh. I had a weird dream last night about the cheese...
 
-OFFI: Everyone was so sad, and I don't want to let anybody down!
+OFFI: That we were running out...
+
+OFFI: Everyone was so sad, and I didn't want to let anybody down!
 
 OFFI: Even though I can't personally...
 
-OFFI: NAVI!! What did I tell you about smoking in the dining area?
+OFFI: NAVI!!!
 
-CHEF: Well, talk to you later Offi!
+OFFI: What did I tell you about smoking in the dining area?
+
+CHEF: Well, talk to you later, Offi!
     -> engineer
 
 =engineer
@@ -372,7 +377,7 @@ ENGI: So thank you again, can't wait for today's meal!
 
 ENGI: Good morning... 
 
-CHEF: You seem down, what's up?
+CHEF: You seem down. Is everything okay?
 
 ENGI: I am not the smartest in the bunch...
 
@@ -419,9 +424,6 @@ NAVI: Sometimes I just forget that she's a cat. Yeah!
 
 =winds_down
 ->DONE
-
-
-
 
 
 == day_2_noon
@@ -556,8 +558,8 @@ NAVI: I don't even know how I survived on vending machine food alone last year!
 
     ->winds_down
 
-=navigator_bad
 
+=navigator_bad
 CHEF: Hey, Navi! How's the tummy doing today?
 
 NAVI: Mmm... I liked the food!
@@ -582,8 +584,9 @@ NAVI: I didn't want to freak you out //:(
 
 NAVI: Are you emetophobic? I'm so sorry I forgot to ask!
 
-NAVI: *rumble* Ough, sorry, gotta go!
+NAVI: *rumble*
 
+NAVI: Ough, sorry, gotta go!
     ->winds_down
 
 =winds_down
