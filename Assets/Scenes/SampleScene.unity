@@ -9199,7 +9199,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'CHEF:'
+  m_text: 'navi:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9539,7 +9539,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -500, y: -20}
-  m_SizeDelta: {x: 250, y: 250}
+  m_SizeDelta: {x: 768, y: 682.6667}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1150417125
 MonoBehaviour:
@@ -9561,7 +9561,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 944122885, guid: 25b9f52de4267a146835fc287b0954f0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10284,9 +10284,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1352447624}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1529400698}
@@ -10294,7 +10294,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -500, y: -20}
-  m_SizeDelta: {x: 250, y: 250}
+  m_SizeDelta: {x: 768, y: 682.6667}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1352447626
 MonoBehaviour:
@@ -10316,7 +10316,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 1751121284, guid: 9abcf187ab5867d47827699df5d3eb22, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15320,25 +15320,30 @@ MonoBehaviour:
     textField: {fileID: 1287492113}
     titleField: {fileID: 1142040225}
     image: {fileID: 0}
+    portrait: {fileID: 1352447626}
   npcDialogueContinueIcon: {fileID: 2016461207}
   playerDialogueBox:
     panelImg: {fileID: 1777331626}
     textField: {fileID: 983295562}
     titleField: {fileID: 1633130939}
     image: {fileID: 0}
+    portrait: {fileID: 0}
   playerChoiceBoxes:
   - panelImg: {fileID: 798173146}
     textField: {fileID: 1852580554}
     titleField: {fileID: 0}
     image: {fileID: 0}
+    portrait: {fileID: 0}
   - panelImg: {fileID: 8705331}
     textField: {fileID: 735516481}
     titleField: {fileID: 0}
     image: {fileID: 0}
+    portrait: {fileID: 0}
   - panelImg: {fileID: 705525371}
     textField: {fileID: 525216029}
     titleField: {fileID: 0}
     image: {fileID: 0}
+    portrait: {fileID: 0}
   choiceStyleSelected:
     scale: 1.2
     color: {r: 0, g: 0, b: 0, a: 0.9019608}
@@ -15348,6 +15353,9 @@ MonoBehaviour:
   cameraRef: {fileID: 330585545}
   minCanvasPaddingX: 10
   minCanvasPaddingY: 0
+  engiSprite: {fileID: 1704396648, guid: e6ec13db2c48d564b9a562ce1772d4c0, type: 3}
+  naviSprite: {fileID: -484173752, guid: 424af9e89a0d8fb47968be0612777efa, type: 3}
+  offiSprite: {fileID: 1751121284, guid: 9abcf187ab5867d47827699df5d3eb22, type: 3}
 --- !u!1001 &4476862885058973512
 PrefabInstance:
   m_ObjectHideFlags: 0
