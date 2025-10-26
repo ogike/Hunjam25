@@ -1,12 +1,12 @@
 using System;
+using Dialogue;
 using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
     public GameObject uiPanel;
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    void Awake()
     {
         if (uiPanel == null)
         {
@@ -16,6 +16,8 @@ public class Interactable : MonoBehaviour
 
     private void OnMouseDown()
     {
-        PanelsController.Instance.ShowPanel(uiPanel);
+        if(DialogueManager.Instance.dialogueIsPlaying) return;
+        
+        PanelsController.Instance.TogglePanel(uiPanel);
     }
 }

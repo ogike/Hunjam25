@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Dialogue;
 using UnityEngine;
 
 public class PanelsController : MonoBehaviour
@@ -31,6 +32,10 @@ public class PanelsController : MonoBehaviour
         //inventory is handled separately
         if (_panels.Contains(playerInventoryPanel))
             _panels.Remove(playerInventoryPanel);
+
+        //spaghetti woooooo
+        _panels.Add(DialogueManager.Instance.servingStation1.uiPanel);
+        _panels.Add(DialogueManager.Instance.servingStation2.uiPanel);
         
         HidePanels();
         playerInventoryPanel.SetActive(true);
@@ -41,9 +46,16 @@ public class PanelsController : MonoBehaviour
         _panels.ForEach(panel => panel.SetActive(false));
     }
 
-    public void ShowPanel(GameObject panel)
+    public void TogglePanel(GameObject panel)
     {
-        HidePanels();
-        panel.SetActive(true);
+        if (panel.activeInHierarchy)
+        {
+            panel.SetActive(false);
+        }
+        else
+        {
+            HidePanels();
+            panel.SetActive(true);
+        }
     }
 }

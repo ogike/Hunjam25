@@ -22,7 +22,8 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     //called by InventoryItem during OnEndDrag
     public void AfterDrop()
     {
-        _ownerStation.ContaminateCheck();
+        if(_ownerStation)
+            _ownerStation.ContaminateCheck();
     }
 
     public InventoryItem GetInventoryItem()

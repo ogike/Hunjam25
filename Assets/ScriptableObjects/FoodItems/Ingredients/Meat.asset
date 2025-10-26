@@ -15,7 +15,7 @@ MonoBehaviour:
   cookResult: {fileID: 11400000, guid: e08e979be7e4a4e0ea1aeac0fe32dc24, type: 2}
   chopResult: {fileID: 11400000, guid: d822686d0f13e4bd3907b923c58cdd7e, type: 2}
   bakeResult: {fileID: 0}
-  baseType: 3
+  baseType: 0
   image: {fileID: -1023864595, guid: c8c38a1e63e6f6944ab4c40ce90add49, type: 3}
   isEdible: 0
   isResultOfMixing: 0

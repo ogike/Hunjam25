@@ -17,12 +17,9 @@ public class ProcessingStation : MonoBehaviour
     }
 
     [Expandable] public FoodItemRegistry foodItemRegistry;
-    
-    private Transform _trans;
 
     private List<InventorySlot> _slots;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _slots = new List<InventorySlot>();
@@ -31,6 +28,8 @@ public class ProcessingStation : MonoBehaviour
             _slots.Add(slot);
             slot.RegisterOwnerStation(this);
         }
+
+        ContaminateCheck();
     }
 
     public void ContaminateCheck()

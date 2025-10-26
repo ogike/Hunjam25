@@ -5,13 +5,14 @@ using UnityEngine;
 
 namespace Model
 {
+    [Flags]
     public enum FoodType
     {
-        Healthy,
-        Gluten,
-        Lactose,
-        Neutral,
-        Cigarette
+        Neutral = 0,
+        Healthy = 1,
+        Gluten = 2,
+        Lactose = 4,
+        Cigarette = 8
     }
     
     [Serializable]
