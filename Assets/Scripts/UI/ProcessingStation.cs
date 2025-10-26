@@ -16,17 +16,31 @@ public class ProcessingStation : MonoBehaviour
         Mix
     }
 
+    [Tooltip("Only needed for mixing station")]
     [Expandable] public FoodItemRegistry foodItemRegistry;
+
+    public bool isStoreroom;
 
     private List<InventorySlot> _slots;
 
     void Start()
     {
         _slots = new List<InventorySlot>();
+        List<GameObject> toDelete = new List<GameObject>();
         foreach (InventorySlot slot in transform.GetComponentsInChildren<InventorySlot>())
         {
+            if (isStoreroom && slot.transform.childCount == 0)
+            {
+                toDelete.Add(slot.gameObject);
+                continue;
+            }
             _slots.Add(slot);
             slot.RegisterOwnerStation(this);
+        }
+
+        if (isStoreroom)
+        {
+            toDelete.ForEach(Destroy);
         }
 
         ContaminateCheck();
@@ -34,6 +48,8 @@ public class ProcessingStation : MonoBehaviour
 
     public void ContaminateCheck()
     {
+        if(isStoreroom) return;
+        
         //this shit ugly.... idc
         foreach (InventorySlot slot in _slots)
         {
@@ -57,6 +73,12 @@ public class ProcessingStation : MonoBehaviour
 
     public void SimpleProcessing(ProcessingType process)
     {
+        if (isStoreroom)
+        {
+            Debug.LogError("Storeroom cant do processing!");
+            return;
+        }
+        
         bool success = false;
 
         foreach (InventorySlot slot in _slots)
@@ -108,6 +130,12 @@ public class ProcessingStation : MonoBehaviour
 
     public void MixingStation()
     {
+        if (isStoreroom)
+        {
+            Debug.LogError("Storeroom cant do processing!");
+            return;
+        }
+        
         if (_slots.Count != 2)
         {
             Debug.LogError($"Attempting to mix with {_slots.Count} slots, should be 2");
@@ -145,10 +173,10 @@ public class ProcessingStation : MonoBehaviour
             ("RiceChoppedCookedIsRicepaper", "TobaccoLeavesChoppedBakedIsDriedTobacco") => foodItemRegistry.cigarettes,
             ("GlutenBakedIsBuns", "MeatCooked") => foodItemRegistry.hotdog,
             ("Cheese", "GlutenCookedIsPasta") => foodItemRegistry.macNCheese,
-            ("MeatChoped", "PotatoChoppedCooked") => foodItemRegistry.rakottKrumpliRaw,
-            ("MeatChopped", "Rice") => foodItemRegistry.rizseshus,
-            ("FishyChopped", "Rice") => foodItemRegistry.sushi,
-            ("VegetablesChopped", "Rice") => foodItemRegistry.sushiVegan,
+            ("MeatChopped", "PotatoChoppedCooked") => foodItemRegistry.rakottKrumpliRaw,
+            ("MeatCooked", "RiceCooked") => foodItemRegistry.rizseshus,
+            ("FishyChopped", "RiceCooked") => foodItemRegistry.sushi,
+            ("RiceCooked", "VegetablesChopped") => foodItemRegistry.sushiVegan,
             ("Gluten", "TacoContentCooked") => foodItemRegistry.tacoFinished,
             ("Gluten", "Meat") => foodItemRegistry.wienerScnitzelRaw,
 

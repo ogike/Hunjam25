@@ -17,6 +17,7 @@ namespace UI
         {
             public RectTransform panelImg;
             public TextMeshProUGUI textField;
+            public TextMeshProUGUI titleField;
 
             // [HideInInspector] public ContentSizeFitter textFitter;
             [HideInInspector] public Image image;
@@ -34,6 +35,18 @@ namespace UI
                 textField.text = text;
                 textField.maxVisibleCharacters = 0;
                 // textFitter.SetLayoutHorizontal();
+            }
+
+            public void ShowTitle(string text)
+            {
+                if (titleField == null)
+                {
+                    Debug.LogError("Title field not set!");
+                    return;
+                }
+
+                titleField.text = text;
+                titleField.maxVisibleCharacters = 99;
             }
 
             public void ShowAllText()
@@ -198,9 +211,10 @@ namespace UI
             npcDialogueContinueIcon.SetActive(false);
             
             playerDialogueBox.ShowText(text);
+            playerDialogueBox.ShowTitle(DialogueManager.PLAYER_STRING_TAG);
         }
         
-        public void LoadLineNpc(string text)
+        public void LoadLineNpc(string text, string npcTitle)
         {
             PanelsController.Instance.HidePanels();
 
@@ -210,6 +224,7 @@ namespace UI
             npcDialogueContinueIcon.SetActive(false);
             
             npcDialogueBox.ShowText(text);
+            playerDialogueBox.ShowTitle(npcTitle);
         }
         
         public void SetNpcTextVisibleCharacters(int num)

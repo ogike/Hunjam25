@@ -16,6 +16,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     
     [Expandable] public FoodItem foodItem;
     [HideInInspector] public Transform parentAfterDrag;
+    private Transform _parentBeforeDrag;
 
     private bool _hovering;
 
@@ -63,6 +64,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         _image.raycastTarget = false;
         parentAfterDrag = transform.parent;
+        _parentBeforeDrag = transform.parent;
         transform.SetParent(transform.root);
     }
 
@@ -76,7 +78,16 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         _image.raycastTarget = true;
         transform.SetParent(parentAfterDrag); //OnDrop will set ParentAfterDrag
 
+        InventorySlot oldSlot = _parentBeforeDrag.GetComponent<InventorySlot>();
+
         InventorySlot newSlot = parentAfterDrag.GetComponent<InventorySlot>();
+
+        if (oldSlot && oldSlot.ownerStation != null && oldSlot != newSlot)
+        {
+            if(oldSlot.ownerStation.isStoreroom)
+                Destroy(oldSlot.gameObject);
+        }
+        
         if (newSlot)
         {
             newSlot.AfterDrop();
@@ -86,8 +97,8 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnPointerEnter(PointerEventData eventData)
     {
         _hovering = true;
-        string itemName = foodItem.name;
-        if (itemName.Trim().Length == 0)
+        string itemName = foodItem.displayName;
+        if (itemName.Length == 0)
             itemName = foodItem.name;
 
         itemName += $"\nType: {foodItem.baseType}\nContaminations: {this._contaminations}";

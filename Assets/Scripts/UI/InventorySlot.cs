@@ -1,13 +1,14 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 
 public class InventorySlot : MonoBehaviour, IDropHandler
 {
-    private ProcessingStation _ownerStation;
+    public ProcessingStation ownerStation { get; private set; }
 
     public void RegisterOwnerStation(ProcessingStation owner)
     {
-        _ownerStation = owner;
+        ownerStation = owner;
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -22,8 +23,8 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     //called by InventoryItem during OnEndDrag
     public void AfterDrop()
     {
-        if(_ownerStation)
-            _ownerStation.ContaminateCheck();
+        if(ownerStation)
+            ownerStation.ContaminateCheck();
     }
 
     public InventoryItem GetInventoryItem()

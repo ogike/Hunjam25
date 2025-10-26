@@ -15,5 +15,8 @@ MonoBehaviour:
   cookResult: {fileID: 11400000, guid: 6bbcbb765150a4053a7e9185f6ad3c18, type: 2}
   chopResult: {fileID: 0}
   bakeResult: {fileID: 11400000, guid: 035cde2b1a96e45e79511bfadd14b78d, type: 2}
-  baseType: 3
+  baseType: 0
   image: {fileID: 2016717391, guid: c8c38a1e63e6f6944ab4c40ce90add49, type: 3}
+  isEdible: 0
+  isResultOfMixing: 0
+  displayName: Chopped Potato
