@@ -1,9 +1,9 @@
 VAR next_chapter = -> day_1_morning
 
 //can be: bad, neutral, good
-VAR ENGI_prev_food = "bad"
-VAR NAVI_prev_food = "good"
-VAR OFFI_prev_food = "bad"
+VAR ENGI_prev_food = "neutral"
+VAR NAVI_prev_food = "neutral"
+VAR OFFI_prev_food = "neutral"
 
 EXTERNAL wait(delayTime) // Wait for x seconds before moving to next line
 EXTERNAL set_first_order(character) //set who shall be have the first server plate, ENGI/NAVI/OFFI
@@ -127,7 +127,6 @@ NAVI: We are aaall in thiiis together until then, isn't that right?
 -> officer
 
 =officer
-TODO figure out how to check for the quality of the food — It's probably gonna take a function of some kind
 
 {
 - OFFI_prev_food == "neutral":
@@ -151,14 +150,13 @@ OFFI: Keep it up!
 -> engineer
 
 =engineer
-TODO paste in the logic from the Officer.
+
 {
     - ENGI_prev_food == "neutral":
         -> engineer_neutral
     - else:
         -> engineer_bad
 }
-->DONE
 
 =engineer_neutral
 
@@ -216,7 +214,6 @@ CHEF: You too!
 
 
 =navigator
-TODO figure out the extra logic (checking for two variables) based on the previous two characters' logic
 
 {
     -NAVI_prev_food == "good":
@@ -227,7 +224,7 @@ TODO figure out the extra logic (checking for two variables) based on the previo
         -> navigator_bad
 }
 
--> DONE
+
 =navigator_good
 
 CHEF: Navi, hi!
