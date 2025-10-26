@@ -71,7 +71,9 @@ ENGI: Sorry I get sucked into the all-nighters and tinkering sometimes.
 
 CHEF: I can see that. Do you take breaks at least?
 
-ENGI: The spaceship needs attention at all times!
+ENGI: HAM-25 needs attention at all times!
+
+ENGI: A spaceship is a delicate machine!
 
 ENGI: But I like working with you guys so far.
 
@@ -298,7 +300,130 @@ NAVI: See you tomorrow!
 =winds_down
 ->DONE
 
+//event template for morning
+
 == day_2_morning
+
+-> officer
+
+=officer
+
+OFFI: ... So we should be solid for the next 5 days at least. 
+
+OFFI: About the flour...
+
+OFFI: I think that should last us around a millennia, if not more.
+
+CHEF: Great! Everything going according to plan then.
+
+OFFI: That's right.
+
+OFFI: Oh, I had a weird dream last night about the cheese, that we were running out...
+
+OFFI: Everyone was so sad, and I don't want to let anybody down!
+
+OFFI: Even though I can't personally...
+
+OFFI: NAVI!! What did I tell you about smoking in the dining area?
+
+CHEF: Well, talk to you later Offi!
+    -> engineer
+
+=engineer
+
+{
+    - ENGI_prev_food == "neutral":
+        -> engineer_neutral
+    - else:
+        -> engineer_bad
+}
+
+=engineer_neutral
+
+ENGI: HAM-25 is ready for the day! 
+
+CHEF: Oh, where did all this energy come from?
+
+ENGI: From my stomach! Yesterday's meal was amazing.
+
+CHEF: I am glad! How much coffee did you drink in the end?
+
+ENGI: I was so nourished by the food I only needed half of my caffeine stash.
+
+ENGI: And yet!
+
+ENGI: I worked on HAM-25 all night long!
+
+ENGI: I fixed the broken pipes near the bathroom...
+
+ENGI: padded out one of the chambers...
+
+ENGI: switched out the microchips in... 
+
+ENGI: Ahh! But I don't want to bore you with this, you must be so busy!
+
+ENGI: So thank you again, can't wait for today's meal!
+
+->navigator
+
+=engineer_bad
+
+
+ENGI: Good morning... 
+
+CHEF: You seem down, what's up?
+
+ENGI: I am not the smartest in the bunch...
+
+ENGI: I realized this yesterday on the toilet.
+
+CHEF: Hmmm?
+
+ENGI: Sorry to make your work a little harder but I forgot to mention.
+
+ENGI: I have a weak stomach for gluten. 
+
+ENGI: Could you please take that into consideration?
+
+CHEF: Of course, anything for the crew!
+
+ENGI: Thank you! 
+
+ENGI: Your food yesterday tasted amazing either way. 
+
+-> navigator
+
+
+=navigator
+
+NAVI: ...So I was telling her, hey, girl, you should totally try the tobacco salad.
+
+NAVI: She's definitely not having it though. I think she is annoyed with me.
+
+NAVI: Good morning, Chef!
+
+CHEF: Oh hey, Navi!
+
+NAVI: Who's annoyed with you?
+
+NAVI: Offi, maybe...? She was a little standoffish last night...
+
+CHEF: Chief, I think cats just can't smile.
+
+NAVI: Oh! Right.
+
+NAVI: Sometimes I just forget that she's a cat. Yeah!
+
+    ->winds_down
+
+=winds_down
+->DONE
+
+
+
+
+
+== day_2_noon
 //TODO:
 -> officer
 
@@ -313,10 +438,46 @@ NAVI: See you tomorrow!
 
 =officer_neutral
 
+OFFI: Sorry for running off earlier, that was so rude of me.
+
+OFFI: So, have you been getting good sleep nowadays?
+
+CHEF: Surprisingly, yes!
+
+CHEF: Even though the beds aren't the most comfortable.
+
+OFFI: I can't wait to see the day when the company actually starts caring about keeping us healthy.
+
+OFFI: Until then, we will cozy up on the thinnest mattresses.
+
+CHEF: So be it, Officer! So be it.
 
 ->engineer
 
 =officer_bad
+
+OFFI: Hey look I don't have a lot of time to tell you this.
+
+OFFI: I'm so sorry.
+
+OFFI: I think I forgot to let you know that I can't eat dairy.
+
+CHEF: Oh no!
+
+CHEF: I should have known, cats can't drink milk!
+
+OFFI: Oh, no! I mean...
+
+OFFI: Catpeople can. I'm just lactose intolerant.
+
+CHEF: Oooh..!
+
+OFFI: *rumble*
+
+OFFI: I have to go now but I'll see you tomorrow! 
+
+CHEF: I'M SO SORRY OFFI!
+
 -> engineer
 
 =engineer
@@ -330,11 +491,46 @@ NAVI: See you tomorrow!
 
 =engineer_neutral
 
+ENGI: Thank you for the amazing meal as always! 
+
+ENGI: I am so happy that we are soon finished with this cargo job. 
+
+ENGI: What are your plans after we landed?
+
+CHEF: I miss sleeping in my own bed. 
+
+CHEF: And you?
+
+ENGI: I need to see my cat as soon as possible.
+
+ENGI: Absolutely important for my soul.
+
+CHEF: Understandable!
+
+ENGI: Alright! I am ready to take on the day and work on the dear HAM-25.
+
+ENGI: Thanks again!
 ->navigator
 
 =engineer_bad
 
+ENGI: Thanks for the meal, Chef.
 
+CHEF: What's wrong?
+
+ENGI: I am feeling a little under the weather.
+
+ENGI: Maybe the food got mixed together with gluten?
+
+ENGI: Or might just be because I miss my cat from home so much...
+
+CHEF: Oh, it must have been my mistake... I'll try to be more careful next time.
+
+ENGI: I think I'll have some rest in my quarters and watch some cat videos.
+
+ENGI: Have a nice day!
+
+CHEF: You too!
 
 -> navigator
 
@@ -343,7 +539,7 @@ NAVI: See you tomorrow!
 
 {
     -NAVI_prev_food == "good":
-        -> navigator_good
+        -> navigator_neutral
     - NAVI_prev_food == "neutral": 
         -> navigator_neutral
     - else:
@@ -351,15 +547,41 @@ NAVI: See you tomorrow!
 }
 
 
-=navigator_good
-
-    -> winds_down
-
 =navigator_neutral
+
+NAVI: I am SOOOO reenergized now. I'm so thankful for your work! 
+
+NAVI: I don't even know how I survived on vending machine food alone last year!
 
     ->winds_down
 
 =navigator_bad
+
+CHEF: Hey, Navi! How's the tummy doing today?
+
+NAVI: Mmm... I liked the food!
+
+NAVI: It tasted great, don't get me wrong!
+
+CHEF: ...? What's wrong?
+
+NAVI: Uhm... Nothing! //:)
+
+CHEF: Do you have a tummyache?
+
+NAVI: No no!
+
+NAVI: I already threw up so it doesn't hurt anymore!
+
+CHEF: Thats worse!!!
+
+CHEF: Why wouldn't you start with that?
+
+NAVI: I didn't want to freak you out //:(
+
+NAVI: Are you emetophobic? I'm so sorry I forgot to ask!
+
+NAVI: *rumble* Ough, sorry, gotta go!
 
     ->winds_down
 
