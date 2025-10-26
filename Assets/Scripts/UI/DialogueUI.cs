@@ -102,9 +102,6 @@ namespace UI
         [FormerlySerializedAs("minPaddingX")] [Header("Limitations")] 
         public float minCanvasPaddingX;
         [FormerlySerializedAs("minPaddingY")] public float minCanvasPaddingY;
-
-        [Header("Tweening")] 
-        public static float dialogueChoiceSelectionTime;
         
         //PRIVATES 
         private RectTransform _transform;

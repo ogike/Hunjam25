@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -15,7 +16,7 @@ namespace Dialogue
         public static DialogueTrigger Instance { get; private set; }
 
         [Header("UI")]
-        public GameObject visualCue;
+        public List<GameObject> visualCues;
 
         private bool _foodNaviDone = false; 
         private bool _foodEngiDone = false;
@@ -84,7 +85,7 @@ namespace Dialogue
         public void SetCanTalk(bool value)
         {
             _canTalk = value;
-            visualCue.SetActive(value);
+            visualCues.ForEach(cue => cue.SetActive(value));
         }
         
         public void EnterDialogue()
