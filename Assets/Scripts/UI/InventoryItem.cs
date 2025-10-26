@@ -97,8 +97,8 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnPointerEnter(PointerEventData eventData)
     {
         _hovering = true;
-        string itemName = foodItem.name;
-        if (itemName.Trim().Length == 0)
+        string itemName = foodItem.displayName;
+        if (itemName.Length == 0)
             itemName = foodItem.name;
 
         itemName += $"\nType: {foodItem.baseType}\nContaminations: {this._contaminations}";
