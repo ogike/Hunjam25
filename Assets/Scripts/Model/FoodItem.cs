@@ -29,5 +29,6 @@ namespace Model
 
         public bool isEdible;
         public bool isResultOfMixing;
+        public string displayName;
     }
 }
