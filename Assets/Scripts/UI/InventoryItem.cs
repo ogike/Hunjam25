@@ -6,15 +6,18 @@ using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Model;
+using SaintsField;
 
-public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    public Image image;
+    private Image _image;
 
-    private List<FoodType> _contaminations;
+    private FoodType _contaminations;
     
-    public FoodItem foodItem;
+    [Expandable] public FoodItem foodItem;
     [HideInInspector] public Transform parentAfterDrag;
+
+    private bool _hovering;
 
     public void Start()
     {
@@ -24,37 +27,41 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             return;
         }
 
-        _contaminations = new List<FoodType>();
+        _image = GetComponent<Image>();
+        _contaminations = FoodType.Neutral;
         InitializeItem(foodItem);
     }
     
+
     public void AddContamination(FoodType contamination)
     {
-        if(_contaminations.Contains(contamination)) return;
-
-        _contaminations.Add(contamination);
+        Debug.Log($"Adding contamination to {name}: had {_contaminations}, adding {contamination}");
+        _contaminations |= contamination;
     }
 
     public void AddContamination(InventoryItem item)
     {
-        foreach (FoodType contamination in item._contaminations)
-        {
-            this._contaminations.Add(contamination);
-        }
+        this._contaminations |= item._contaminations;
+        Debug.Log($"Adding contamination to {name}: had {_contaminations}, adding {item._contaminations}");
     }
 
-    public List<FoodType> GetContaminations() => _contaminations;
+    public FoodType GetContaminations() => _contaminations;
 
     public void InitializeItem(FoodItem item)
     {
         foodItem = item;
-        image.sprite = foodItem.image;
+        if(foodItem.image)
+            _image.sprite = foodItem.image;
+        else
+        {
+            Debug.LogWarning("Image for food not set!");
+        } 
         AddContamination(item.baseType);
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        image.raycastTarget = false;
+        _image.raycastTarget = false;
         parentAfterDrag = transform.parent;
         transform.SetParent(transform.root);
     }
@@ -66,7 +73,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        image.raycastTarget = true;
+        _image.raycastTarget = true;
         transform.SetParent(parentAfterDrag); //OnDrop will set ParentAfterDrag
 
         InventorySlot newSlot = parentAfterDrag.GetComponent<InventorySlot>();
@@ -74,5 +81,25 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         {
             newSlot.AfterDrop();
         }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        _hovering = true;
+        string itemName = foodItem.name;
+        if (itemName.Trim().Length == 0)
+            itemName = foodItem.name;
+
+        itemName += $"\nType: {foodItem.baseType}\nContaminations: {this._contaminations}";
+        
+        PanelsController.Instance.SetHoverVisibility(true);
+        PanelsController.Instance.SetHoverText(itemName);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if(!_hovering) return; //dont know if this actually catches shit
+        _hovering = false;
+        PanelsController.Instance.SetHoverVisibility(false);
     }
 }

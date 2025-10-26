@@ -1,5 +1,15 @@
-/*
-->day_1_morning.navigator
+VAR next_chapter = -> day_1_morning
+
+//can be: bad, neutral, good
+VAR ENGI_prev_food = "neutral"
+VAR NAVI_prev_food = "neutral"
+VAR OFFI_prev_food = "neutral"
+
+EXTERNAL wait(delayTime) // Wait for x seconds before moving to next line
+EXTERNAL set_first_order(character) //set who shall be have the first server plate, ENGI/NAVI/OFFI
+EXTERNAL set_second_order(character) //set who shall be have the second server plate, ENGI/NAVI/OFFI
+
+-> next_chapter
 
 ==sample
 
@@ -11,10 +21,13 @@ Sooner or later.
 - The sooner the better.
 This is a game jam, after all.
 
+
 ->DONE
 */
 
 == day_1_morning
+
+-> engineer
 
 =officer
 OFFI: Good morning! (yawn)
@@ -59,7 +72,9 @@ ENGI: But I don't want to miss your meals.
 ENGI: {offend: Not concoctions. I got it.}
 ENGI: I'll leave you to it now.
 
-->winds_down
+~ set_first_order("ENGI")
+~ wait (1)
+->navigator
 
 
 =navigator
@@ -99,19 +114,31 @@ NAVI: Heeey, Chef! Good to see you!
         * * [If you say so...]
 - NAVI: Heeheehee...
 NAVI: Anyway, I'll not keep you from your kitchen duties.
+
+~ set_second_order("NAVI")
+~ next_chapter = -> day_1_noon
+
 ->winds_down
 
 =winds_down
+
 -> DONE
 
 
 == day_1_noon
+//TODO:
+-> winds_down
+
+=day_1_noon_start
+
 
 
 -> winds_down
 
+
 =winds_down
 ->DONE
+
 
 
 /*
@@ -185,3 +212,10 @@ Noon
     
 
 */
+
+=== function wait(x) ===
+~ return 0
+=== function set_first_order(x) ===
+~ return 0
+=== function set_second_order(x) ===
+~ return 0
