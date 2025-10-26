@@ -7,7 +7,7 @@ VAR OFFI_prev_food = "neutral"
 
 EXTERNAL wait(delayTime) // Wait for x seconds before moving to next line
 
--> day_1_noon
+-> next_chapter
 
 /*
 ==sample
@@ -43,6 +43,7 @@ CHEF: Yes, ma'am! I mean, yes, Offi! Meow?
 
 OFFI: Meow!
 
+~ wait(1)
 ->engineer
 
 
@@ -120,6 +121,7 @@ CHEF: Any news about how long this should take until arrival?
 NAVI: Oh, yeah! We should be around 4 days away from the destination. 
 NAVI: We are aaall in thiiis together until then, isn't that right?
 
+~ next_chapter = -> day_1_noon
 -> DONE
 
 
