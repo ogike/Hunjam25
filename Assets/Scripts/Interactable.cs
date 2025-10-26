@@ -16,7 +16,6 @@ public class Interactable : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("ONMouseDown");
         if(DialogueManager.Instance.dialogueIsPlaying) return;
         
         PanelsController.Instance.TogglePanel(uiPanel);

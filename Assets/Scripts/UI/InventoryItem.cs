@@ -89,6 +89,8 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         string itemName = foodItem.name;
         if (itemName.Trim().Length == 0)
             itemName = foodItem.name;
+
+        itemName += $"\nType: {foodItem.baseType}\nContaminations: {this._contaminations}";
         
         PanelsController.Instance.SetHoverVisibility(true);
         PanelsController.Instance.SetHoverText(itemName);
