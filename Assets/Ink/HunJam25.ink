@@ -1,14 +1,14 @@
 VAR next_chapter = -> day_1_morning
 
 //can be: bad, neutral, good
-VAR OFFI_prev_food = "bad"
-VAR ENGI_prev_food = "bad"
-VAR NAVI_prev_food = "bad"
+VAR OFFI_prev_food = "neutral"
+VAR ENGI_prev_food = "neutral"
+VAR NAVI_prev_food = "neutral"
 
 
 EXTERNAL wait(delayTime) // Wait for x seconds before moving to next line
 
-//-> day_3_noon //this is just for testing
+//-> day_4_noon //this is just for testing
 -> next_chapter //only commented out during testing. Should be reactivated before pushing
 
 /*
@@ -809,6 +809,201 @@ NAVI: Thanks for the bangin' meal again!
 NAVI: You're so great!
     ->winds_down
 
+
+=winds_down
+->DONE
+
+==day_4_morning
+-> officer
+
+=officer
+
+OFFI: *sigh* First the potatoes, now the coffee machine ran out...
+
+OFFI: I will need to talk to Engi about his caffeine consumption
+
+OFFI: Again.
+
+OFFI: Really not looking forward to it.
+
+CHEF: I have been trying my best to keep him from slowly killing himself with it too.
+
+OFFI: I think we all have.
+
+OFFI: To no avail.
+    ->engineer
+
+=engineer
+
+{
+    - ENGI_prev_food == "neutral":
+        -> engineer_neutral
+    - else:
+        -> engineer_bad
+}
+
+=engineer_neutral
+
+ENGI: Hi! I have good news.
+
+ENGI: I think I figured out the fuel management.
+
+ENGI: We will last until we reach the new drop-off point.
+
+CHEF: Whew!
+
+CHEF: I was already in a bit of a pinch getting the ingredients ready today. Thank you!
+
+ENGI: Couldn't have made it without your cooking!
+
+ENGI: Cheers to another good lunch!
+
+CHEF: Did you just give a toast with a coffee mug?
+
+->navigator
+
+=engineer_bad
+
+ENGI: Hey.
+
+ENGI: Ship is not doing good.
+
+ENGI: I'm not doing good.
+
+CHEF: What's u-
+
+ENGI: I'm just gonna sit down and chill a little, okay? 
+
+ENGI: Thanks.
+-> navigator
+
+
+=navigator
+NAVI: Ayyo! Hey, I heard some rumors that we are running low on some food.
+
+NAVI: We will still have lunch today, right?
+
+CHEF: Oh, I'm... really trying my best.
+
+CHEF: It's a little tough without the potatoes though.
+
+CHEF: Also, to be fair, I didn't account for the detour when we embarked on the journey.
+
+CHEF: I'm a little sad these days.
+
+NAVI: Totally got you. I know I'm supposed to be on top of this all, but...
+
+NAVI: I just really wish there were more of us, you know?
+
+CHEF: Maybe on the next route. Fingers crossed?
+
+NAVI: Knocking on wood, bro. Keep it up! I believe in us!
+
+    ->winds_down
+
+=winds_down
+->DONE
+
+== day_4_noon
+//TODO:
+-> officer
+
+=officer
+
+OFFI: Sorry, I need to run.
+{OFFI_prev_food == "bad": -> engineer}
+
+OFFI: It was a great, meal.
+
+OFFI: I'll talk to you later.
+->engineer
+
+
+=engineer
+
+{
+    - ENGI_prev_food == "neutral":
+        -> engineer_neutral
+    - else:
+        -> engineer_bad
+}
+
+=engineer_neutral
+
+ENGI: CHEF! I think I can do it!
+
+ENGI: I figured out new ways to optimize the holding capacity.
+
+ENGI: I have to take a look at the control room.
+
+ENGI: Then I will check out the heating system and vents.
+
+ENGI: I think something got a little cooked.
+
+ENGI: In the wrong way. In the smoke way.
+
+CHEF: That one is not the ship's fault, I think.
+
+ENGI: Will report back soon! 
+
+CHEF: Please do!
+->navigator
+
+=engineer_bad
+
+ENGI: Hey. Did I do something to piss you off?
+
+CHEF: What do you mean?
+
+ENGI: Nothing, just my gluten allergy.
+
+ENGI: Sorry for being cranky.
+
+ENGI: But we might land today, so that's good.
+
+ENGI: Good luck with cleaning!
+
+-> navigator
+
+
+=navigator
+
+{
+    -NAVI_prev_food == "good":
+        -> navigator_neutral
+    - NAVI_prev_food == "neutral": 
+        -> navigator_neutral
+    - else:
+        -> navigator_bad
+}
+
+
+=navigator_neutral
+
+NAVI: Hey Chef, thanks for the meal!
+
+NAVI: You're always a bright spot in my day!
+
+    ->winds_down
+
+=navigator_bad
+
+NAVI: Ah man, it's gonna be tough sitting in one place all day like this...
+
+CHEF: Nooo...
+
+CHEF: Are you not doing well?
+
+NAVI: Well, sadly I threw up while eating. Not sure what happened, the food wasn't even bad...
+
+NAVI: I'm so sorry for letting you down, Chef!!!
+
+NAVI: I swear I will train my tummy better!
+
+CHEF: ...Are you kidding me? I'M sorry! 
+
+NAVI: No, I AM sorry!
+    ->winds_down
 
 =winds_down
 ->DONE
