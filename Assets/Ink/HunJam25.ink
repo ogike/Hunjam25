@@ -1,3 +1,4 @@
+/*
 ->day_1_morning.navigator
 
 ==sample
@@ -11,7 +12,7 @@ Sooner or later.
 This is a game jam, after all.
 
 ->DONE
-
+*/
 
 == day_1_morning
 
@@ -21,9 +22,14 @@ OFFI: I see you have occupied your workstation early.
 OFFI: Have you slept well?
     * [Yes, I did. Thank you.]//Confirm
     * [It will take some getting used to.] //disagree
+        
     * [I started early and hauled in some potatoes...]//deflect
-- //gather it back up
-TODO: Implement the dialogue of Offi written by others
+        OFFI: Okay. ->enough
+- CHEF: How about you?
+OFFI: I have my complaints, but I won't bore you with them.
+- (enough) OFFI: You have a lot to do here.
+OFFI: Enough on your plate. Pardon the pun.
+OFFI: Anyway, carry on!
 ->winds_down
 
 
