@@ -18,9 +18,12 @@ namespace UI
             public RectTransform panelImg;
             public TextMeshProUGUI textField;
             public TextMeshProUGUI titleField;
+            
 
             // [HideInInspector] public ContentSizeFitter textFitter;
             [HideInInspector] public Image image;
+
+            public Image portrait;
 
             public void SetCachedValues()
             {
@@ -47,6 +50,11 @@ namespace UI
 
                 titleField.text = text;
                 titleField.maxVisibleCharacters = 99;
+            }
+
+            public void ApplyPortrait(Sprite img)
+            {
+                portrait.sprite = img;
             }
 
             public void ShowAllText()
@@ -102,6 +110,10 @@ namespace UI
         [FormerlySerializedAs("minPaddingX")] [Header("Limitations")] 
         public float minCanvasPaddingX;
         [FormerlySerializedAs("minPaddingY")] public float minCanvasPaddingY;
+
+        public Sprite engiSprite;
+        public Sprite naviSprite;
+        public Sprite offiSprite;
         
         //PRIVATES 
         private RectTransform _transform;
@@ -222,6 +234,19 @@ namespace UI
             
             npcDialogueBox.ShowText(text);
             npcDialogueBox.ShowTitle(npcTitle);
+
+            if (npcTitle == DialogueManager.ENGI_STRING_TAG)
+            {
+                npcDialogueBox.ApplyPortrait(engiSprite);
+            }
+            else if (npcTitle == DialogueManager.NAVI_STRING_TAG)
+            {
+                npcDialogueBox.ApplyPortrait(naviSprite);
+            }
+            else
+            {
+                npcDialogueBox.ApplyPortrait(offiSprite);
+            }
         }
         
         public void SetNpcTextVisibleCharacters(int num)
