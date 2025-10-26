@@ -37,6 +37,7 @@ namespace Dialogue
         private int _currentChoiceIndex = 0;
         private bool _hasShownChoice;
         private bool npcTalking;
+        private string _npcTitle;
         private bool _switchedChoiceAlready;
 
         private Coroutine displayLineCoroutine;
@@ -268,7 +269,7 @@ namespace Dialogue
             _continueInputBuffered = false;
             bool isAddingRichTextTag = false;
             
-            if(npcTalking) _ui.LoadLineNpc(line);
+            if(npcTalking) _ui.LoadLineNpc(line, _npcTitle);
             else           _ui.LoadLinePlayer(line);
 
             // wait to reset frame input
@@ -347,8 +348,12 @@ namespace Dialogue
                             npcTalking = true;
                             break;
                         default:
+                            Debug.LogError($"Character name {characterName} could not be parsed!");
                             break;
                     }
+
+                    if (npcTalking)
+                        _npcTitle = characterName;
                 }
                 else
                 {
