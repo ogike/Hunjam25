@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoodItem
   cookResult: {fileID: 0}
   chopResult: {fileID: 0}
-  bakeResult: {fileID: 0}
+  bakeResult: {fileID: 11400000, guid: cac839f71277d4aaf99b7feac77e01d8, type: 2}
   baseType: 0
   image: {fileID: -1470467270948413340, guid: c3053006e2896164ba775e9db7887a6c, type: 3}
   isEdible: 0

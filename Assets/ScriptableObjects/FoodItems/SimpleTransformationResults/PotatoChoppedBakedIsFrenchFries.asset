@@ -17,6 +17,6 @@ MonoBehaviour:
   bakeResult: {fileID: 0}
   baseType: 0
   image: {fileID: 8486042258811089733, guid: 6b01dc78fdab9ab4990f2fbc67c0c25f, type: 3}
-  isEdible: 0
+  isEdible: 1
   isResultOfMixing: 0
   displayName: French Fries

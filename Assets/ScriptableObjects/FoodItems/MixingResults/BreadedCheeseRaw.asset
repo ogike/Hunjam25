@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoodItem
   cookResult: {fileID: 0}
   chopResult: {fileID: 0}
-  bakeResult: {fileID: 0}
+  bakeResult: {fileID: 11400000, guid: d8597e52246a54503885bf628beb6ec4, type: 2}
   baseType: 6
   image: {fileID: 2310726318632827694, guid: 9e92999ab9c98a845b2577af4865a649, type: 3}
   isEdible: 0
   isResultOfMixing: 1
-  displayName: Breaded Cheese Base
+  displayName: Breaded Cheese
