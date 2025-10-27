@@ -36,6 +36,7 @@ public class ServingStation : MonoBehaviour
         if (!food.isEdible)
         {
             Debug.Log("Trying to serve food that is not edible yet!");
+            StartCoroutine(PanelsController.Instance.HoverPopup("This food is not edible yet!"));
             return;
         }
 
