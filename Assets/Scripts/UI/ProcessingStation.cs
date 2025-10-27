@@ -87,6 +87,7 @@ public class ProcessingStation : MonoBehaviour
             if (!inventoryItem)
             {
                 Debug.Log("Cooking with empty slot");
+                StartCoroutine(PanelsController.Instance.HoverPopup("Can't do this with an empty slot!"));
                 continue; //error handling inside GetInventoryItem()
             }
 
@@ -118,6 +119,7 @@ public class ProcessingStation : MonoBehaviour
             }
             else
             {
+                StartCoroutine(PanelsController.Instance.HoverPopup("Not a valid recipe!"));
                 Debug.Log($"Poof, this shit {foodItem.name} didnt {process.ToString()} man");
             }
         }
@@ -139,6 +141,7 @@ public class ProcessingStation : MonoBehaviour
         if (_slots.Count != 2)
         {
             Debug.LogError($"Attempting to mix with {_slots.Count} slots, should be 2");
+            StartCoroutine(PanelsController.Instance.HoverPopup("Needs to have 2 items!"));
             return;
         }
 
@@ -147,6 +150,7 @@ public class ProcessingStation : MonoBehaviour
         if (!item1 || !item2)
         {
             Debug.Log("Not both slots have items to mix");
+            StartCoroutine(PanelsController.Instance.HoverPopup("Needs to have 2 items!"));
             return;
         }
 
@@ -155,6 +159,7 @@ public class ProcessingStation : MonoBehaviour
         if (item1 == item2)
         {
             Debug.Log("Cannot mix two of the same item");
+            StartCoroutine(PanelsController.Instance.HoverPopup("Cannot mix two of the same item!"));
             return;
         }
 
@@ -197,6 +202,7 @@ public class ProcessingStation : MonoBehaviour
         if (!result)
         {
             Debug.Log($"Mixing would result in null FoodItem!!!!");
+            StartCoroutine(PanelsController.Instance.HoverPopup("Not a valid recipe!"));
             return false;
         }
 

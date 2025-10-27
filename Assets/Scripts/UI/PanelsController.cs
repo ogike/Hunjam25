@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Dialogue;
@@ -90,6 +91,14 @@ public class PanelsController : MonoBehaviour
     public void SetHoverText(string text)
     {
         hoverText.text = text;
+    }
+    
+    public IEnumerator HoverPopup(string text)
+    {
+        SetHoverText(text);
+        SetHoverVisibility(true);
+        yield return new WaitForSeconds(1);
+        SetHoverVisibility(false);
     }
 
     public void StartNewDay()
