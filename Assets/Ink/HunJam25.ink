@@ -7,6 +7,9 @@ VAR NAVI_prev_food = "neutral"
 
 
 EXTERNAL wait(delayTime) // Wait for x seconds before moving to next line
+EXTERNAL setDayText(text) // Set the title cards text during fade-in fade-out
+EXTERNAL fadeBetweenDays() // Fade in fade out with default values
+EXTERNAL fadeToCook() // Fade in fade out with default values, setting title card to "Time to cook" temporarily 
 
 ==start
 -> next_chapter
@@ -124,6 +127,9 @@ NAVI: Oh, yeah! We should be around 4 days away from the destination.
 NAVI: We are aaall in thiiis together until then, isn't that right?
 
 ~ next_chapter = -> day_1_noon
+~ setDayText("Day 1 - Afternoon")
+
+~ fadeToCook()
 -> DONE
 
 
@@ -192,14 +198,6 @@ ENGI: Will do!
 ->navigator
 
 =engineer_bad
-
-ENGI: Thank you for the food, Chef.
-CHEF: I hope you liked it.
-ENGI: I am feeling a little off...
-ENGI: I think I'm gonna go back to my quarters. 
-ENGI: Have a nice day!
-CHEF: Oh... You too...!
-->navigator
 
 ENGI: Thank you Chef for the food!
 
@@ -301,8 +299,10 @@ NAVI: See you tomorrow!
 ->winds_down
 
 =winds_down
-~ next_chapter = -> day_2_morning
-->DONE
+
+~ setDayText("Day 2 - Morning")
+~ fadeBetweenDays()
+-> day_2_morning
 
 //event template for morning
 
@@ -422,10 +422,13 @@ NAVI: Oh! Right.
 
 NAVI: Sometimes I just forget that she's a cat. Yeah!
 
-    ->winds_down
+->winds_down
 
 =winds_down
 ~ next_chapter = -> day_2_noon
+~ setDayText("Day 2 - Afternoon")
+
+~ fadeToCook()
 ->DONE
 
 
@@ -559,7 +562,7 @@ NAVI: I am SOOOO reenergized now. I'm so thankful for your work!
 
 NAVI: I don't even know how I survived on vending machine food alone last year!
 
-    ->winds_down
+->winds_down
 
 
 =navigator_bad
@@ -590,11 +593,14 @@ NAVI: Are you emetophobic? I'm so sorry I forgot to ask!
 NAVI: *rumble*
 
 NAVI: Ough, sorry, gotta go!
-    ->winds_down
+->winds_down
 
 =winds_down
-~ next_chapter = -> day_3_morning
-->DONE
+
+~ setDayText("Day 3 - Morning")
+~ fadeBetweenDays()
+
+->day_3_morning
 
 
 == day_3_morning
@@ -723,10 +729,13 @@ CHEF: Ah, Navi, please stop blowing smoke in the kitch...
 
 CHEF: Ok-bye.
 
-    ->winds_down
+->winds_down
 
 =winds_down
 ~ next_chapter = -> day_3_noon
+~ setDayText("Day 3 - Afternoon")
+
+~ fadeToCook()
 ->DONE
 
 == day_3_noon
@@ -815,8 +824,9 @@ NAVI: You're so great!
 
 
 =winds_down
-~ next_chapter = -> day_4_morning
-->DONE
+~ setDayText("Day 4 - Morning")
+~ fadeBetweenDays()
+->day_4_morning
 
 == day_4_morning
 -> officer
@@ -836,7 +846,7 @@ CHEF: I have been trying my best to keep him from slowly killing himself with it
 OFFI: I think we all have.
 
 OFFI: To no avail.
-    ->engineer
+->engineer
 
 =engineer
 
@@ -908,6 +918,9 @@ NAVI: Knocking on wood, bro. Keep it up! I believe in us!
 
 =winds_down
 ~ next_chapter = -> day_4_noon
+~ setDayText("Day 4 - Afternoon")
+
+~ fadeToCook()
 ->DONE
 
 == day_4_noon
@@ -1012,10 +1025,18 @@ NAVI: No, I AM sorry!
     ->winds_down
 
 =winds_down
+
+~ setDayText("End of the game\nThank you for playing!")
+~ fadeBetweenDays()
+
 ->DONE
 
 
 
 
 === function wait(x) ===
+~ return 0
+=== function setDayText(x) ===
+~ return 0
+=== function fadeBetweenDays() ===
 ~ return 0

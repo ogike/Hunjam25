@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,8 @@ public class ScreenFade : MonoBehaviour
     public static ScreenFade Instance { get; private set; }
     
     public Image fadeToBlackScreen;
+    public TextMeshProUGUI dayText;
+    private string _dayTextBuffer;
 
     public float defaultFadeInTime;
     public float defaultFadeOutTime;
@@ -28,14 +31,41 @@ public class ScreenFade : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(StartGame());
+    }
+
+    private IEnumerator StartGame()
+    {
+        SetFadeToBlackColor(1);
+        yield return new WaitForSeconds(fullBlackTime);
         FadeIn(defaultFadeInTime);
+    }
+
+    public void SetDayText(string text)
+    {
+        dayText.text = text;
     }
 
     public void FadeBetweenDays()
     {
         StartCoroutine(FadeOutSequence(defaultFadeOutTime, fullBlackTime, defaultFadeInTime));
     }
+    
+    public void FadeToCook()
+    {
+        StartCoroutine(FadeToCookSequence(defaultFadeOutTime, fullBlackTime, defaultFadeInTime));
+    }
 
+    public IEnumerator FadeToCookSequence(float fadeOut, float wait, float fadeIn)
+    {
+        _dayTextBuffer = dayText.text;
+        dayText.text = "Time to cook!";
+        FadeOut(fadeOut);
+        yield return new WaitForSeconds(fadeOut + wait);
+        FadeIn(fadeIn);
+        yield return new WaitForSeconds(fadeIn);
+        dayText.text = _dayTextBuffer;
+    }
 
     public IEnumerator FadeOutSequence(float fadeOut, float wait, float fadeIn)
     {
@@ -46,9 +76,13 @@ public class ScreenFade : MonoBehaviour
     
     public void SetFadeToBlackColor(float opacity)
     {
-        Color color = fadeToBlackScreen.color;
-        color.a = opacity;
-        fadeToBlackScreen.color = color;
+        Color colorImg = fadeToBlackScreen.color;
+        colorImg.a = opacity;
+        fadeToBlackScreen.color = colorImg;
+        
+        Color colorText = dayText.color;
+        colorText.a = opacity;
+        dayText.color = colorText;
     }
     
     public void FadeIn(float duration)

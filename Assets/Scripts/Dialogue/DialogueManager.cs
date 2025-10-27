@@ -154,6 +154,22 @@ namespace Dialogue
                 if(debugMode) Debug.Log("InkDebug: Waiting for " + time + " seconds...");
                 StartCoroutine(PauseLines(time));
             });
+            
+            currentStory.BindExternalFunction ("setDayText", (string text) => {
+                if(debugMode) Debug.Log($"InkDebug: Setting dayText to {text} ...");
+                ScreenFade.Instance.SetDayText(text);
+            });
+            
+            currentStory.BindExternalFunction ("fadeBetweenDays", () => {
+                if(debugMode) Debug.Log($"InkDebug: Fading between days... ");
+                ScreenFade.Instance.FadeBetweenDays();
+                StartCoroutine(PauseLines(ScreenFade.Instance.TimeBetweenDays));
+            });
+            
+            currentStory.BindExternalFunction ("fadeToCook", () => {
+                if(debugMode) Debug.Log($"InkDebug: Fading to cooking... ");
+                ScreenFade.Instance.FadeToCook();
+            });
         }
 
         public void EnterMonologueMode(String inkPath)
