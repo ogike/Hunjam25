@@ -71,6 +71,7 @@ namespace Dialogue
 
         public IEnumerator EndOfDay()
         {
+            PanelsController.Instance.HidePanels();
             ScreenFade.Instance.FadeBetweenDays();
             
             yield return new WaitForSeconds(ScreenFade.Instance.TimeBetweenDays);
@@ -78,11 +79,6 @@ namespace Dialogue
             _foodNaviDone = false;
             _foodEngiDone = false;
             _foodOffiDone = false;
-            
-            PanelsController.Instance.HidePanels();
-            ScreenFade.Instance.FadeBetweenDays();
-
-            yield return new WaitForSeconds(ScreenFade.Instance.TimeBetweenDays);
             
             SetCanTalk(true);
             PanelsController.Instance.StartNewDay();
