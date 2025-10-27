@@ -113,10 +113,10 @@ TextureImporter:
       name: navi_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2304
-        height: 3072
+        x: 307
+        y: 435
+        width: 1775
+        height: 2511
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
